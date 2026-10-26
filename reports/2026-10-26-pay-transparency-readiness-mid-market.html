@@ -1,0 +1,290 @@
+<title>Pay Transparency Readiness</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column; verdict banner first, then evidence in the order a decision-maker asks for it */
+:root {
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --fg: #14212b;
+  --muted: #5a6b78;
+  --line: #d9e0e5;
+  --ink: #0f3a52;
+  --pass: #b4411f;
+  --pass-bg: #fbe9e3;
+  --warn: #9a6a00;
+  --warn-bg: #fbf0d3;
+  --band: #d6e6ee;
+  --bar: #2b6f93;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d171e; --surface: #14212b; --fg: #e6edf1; --muted: #93a5b1; --line: #26384a;
+    --ink: #8cc4de; --pass: #f08a66; --pass-bg: #3a1f16; --warn: #e5b94d; --warn-bg: #33290f;
+    --band: #1d3342; --bar: #5aa6cb; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d171e; --surface: #14212b; --fg: #e6edf1; --muted: #93a5b1; --line: #26384a;
+  --ink: #8cc4de; --pass: #f08a66; --pass-bg: #3a1f16; --warn: #e5b94d; --warn-bg: #33290f;
+  --band: #1d3342; --bar: #5aa6cb; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-block: 28px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(26px, 5vw, 38px); }
+h2 { font-size: 21px; color: var(--ink); }
+h3 { font-size: 16px; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: grid; gap: 20px; grid-template-columns: 1fr 1fr; }
+.verdict > div { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.pill { align-self: flex-start; font-family: var(--font-mono); font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 99px; background: var(--pass-bg); color: var(--pass); letter-spacing: .06em; }
+.pill.w { background: var(--warn-bg); color: var(--warn); }
+.score { font-family: var(--font-display); font-size: 52px; font-weight: 700; line-height: 1; }
+.score small { font-size: 18px; color: var(--muted); font-weight: 600; }
+.meter { position: relative; height: 10px; background: var(--band); border-radius: 5px; margin-top: 4px; }
+.meter i { position: absolute; inset: 0 auto 0 0; background: var(--pass); border-radius: 5px; }
+.meter b { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--fg); opacity: .55; }
+.ticks { position: relative; height: 16px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.ticks span { position: absolute; transform: translateX(-50%); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.fact .k { font-size: 12px; color: var(--muted); }
+.fact .v { font-family: var(--font-mono); font-size: 15px; font-weight: 500; }
+ol.why { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.n, th.n { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ladder { display: flex; flex-direction: column; gap: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.lrow { display: grid; grid-template-columns: minmax(120px, 210px) minmax(0, 1fr) 62px; gap: 10px; align-items: center; font-size: 13px; }
+.lrow .name { min-width: 0; overflow-wrap: anywhere; }
+.ltrack { position: relative; height: 16px; }
+.ltrack .band { position: absolute; top: 0; bottom: 0; background: var(--warn-bg); border-left: 1px dashed var(--warn); border-right: 1px dashed var(--warn); }
+.ltrack .fill { position: absolute; top: 3px; bottom: 3px; left: 0; background: var(--bar); border-radius: 0 3px 3px 0; }
+.lrow .p { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.legend { font-size: 12.5px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; background: var(--bar); vertical-align: -1px; }
+.legend span.b::before { background: var(--warn-bg); border: 1px dashed var(--warn); }
+.note { background: var(--warn-bg); color: var(--fg); border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cols > div { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+ul.tight { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.gate { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--pass); border-radius: 8px; padding: 12px 14px; }
+.foot { font-size: 12.5px; color: var(--muted); }
+@media (max-width: 640px) {
+  .verdict, .cols { grid-template-columns: 1fr; }
+  .lrow { grid-template-columns: 1fr 62px; }
+  .lrow .ltrack { grid-column: 1 / -1; order: 3; }
+}
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <span class="eyebrow">Daily idea · run of 26 Oct 2026 · b2b-services</span>
+    <h1>Pay-transparency readiness for mid-size Czech employers</h1>
+    <p style="color:var(--muted)">A fixed-price service for employers with 50 to 250 staff that must prepare for the new Czech pay-transparency law: job architecture, pay bands, a pay-gap check and lawyer-reviewed templates. Assessed from the scout brief and three independent reports on competition, supply and the law.</p>
+  </header>
+
+  <section class="verdict" aria-label="Verdict">
+    <div>
+      <span class="pill">PASS · AS BRIEFED</span>
+      <div class="score">54<small> / 100</small></div>
+      <div class="meter"><i style="width:54%"></i><b style="left:60%"></b><b style="left:75%"></b></div>
+      <div class="ticks"><span style="left:60%">60</span><span style="left:75%">75</span></div>
+      <p style="font-size:13px;color:var(--muted)">Full package, about 9k EUR cash, 8 to 12 h/week once running. Confidence: medium.</p>
+    </div>
+    <div>
+      <span class="pill w">PASS · RESHAPED, CLOSEST TO INVESTIGATE</span>
+      <div class="score">58<small> / 100</small></div>
+      <div class="meter"><i style="width:58%;background:var(--warn)"></i><b style="left:60%"></b><b style="left:75%"></b></div>
+      <div class="ticks"><span style="left:60%">60</span><span style="left:75%">75</span></div>
+      <p style="font-size:13px;color:var(--muted)">Starter "pay-system and recruiting readiness sprint", about 5 to 7.5k EUR, 8 to 9 h/week.</p>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><div class="k">Capital (as briefed)</div><div class="v">6 to 14k EUR</div></div>
+    <div class="fact"><div class="k">Delivery per full package</div><div class="v">25 to 45 h</div></div>
+    <div class="fact"><div class="k">Net per package, base</div><div class="v">~1,470 EUR</div></div>
+    <div class="fact"><div class="k">Legal burden</div><div class="v">Medium, conditional</div></div>
+    <div class="fact"><div class="k">Best entity</div><div class="v">VAT-payer s.r.o.</div></div>
+  </div>
+
+  <section>
+    <h2>Why, in five lines</h2>
+    <ol class="why">
+      <li><b>Demand exists but is thin and dated.</b> The bill has only passed first reading. Near-term reporting duties hit employers with 150 to 249 staff, about 500 to 700 private employers in Prague and Central Bohemia (estimate). Employers with 50 to 99 staff have no reporting duty.</li>
+      <li><b>The gap in price and segment is mostly not real.</b> Pay-Fair already sells grading plus a parity report for 30,000 to 75,000 CZK a year. The ministry's Logib tool is free, and courses with sample documents cost about 143 EUR. The open gap is done-for-you implementation with legal sign-off.</li>
+      <li><b>The templates run into the advocacy act.</b> Drafting a client's pay regulation and information letters for a fee risks counting as unauthorised legal services (Act 85/1996 §2(3)). A lawyer has to be contracted separately, and that lawyer then owns the client.</li>
+      <li><b>Hours and income are lower than the brief.</b> A full package takes 25 to 45 hours, not 12, so capacity is 10 to 18 packages a year. Expect about 150 EUR a month in year 1 and about 1,250 EUR pre-tax in year 2 in the base case.</li>
+      <li><b>The downside is small and testable.</b> Risk is 5 to 14k EUR, and a 500 to 1,000 EUR validation can settle the key questions first.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What buyers can already get</h2>
+    <p>Everything to the left of the shaded band is cheaper than the brief's 2,500 to 6,000 EUR core package, and most of it covers part of the same scope.</p>
+    <div class="ladder" role="img" aria-label="Bar chart of existing Czech pay-transparency offers in EUR per year or per course, with the brief's planned 2,500 to 6,000 EUR package range shaded">
+      <div class="lrow"><span class="name">Template course with sample documents</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:2.4%"></div></div><span class="p">143</span></div>
+      <div class="lrow"><span class="name">Paylab, 20 positions (per year)</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:17%"></div></div><span class="p">1,020</span></div>
+      <div class="lrow"><span class="name">Pay-Fair S Basic (per year)</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:20.4%"></div></div><span class="p">1,224</span></div>
+      <div class="lrow"><span class="name">Pay-Fair S Advanced</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:34%"></div></div><span class="p">2,041</span></div>
+      <div class="lrow"><span class="name">Pay-Fair S Premium</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:40.8%"></div></div><span class="p">2,449</span></div>
+      <div class="lrow"><span class="name">Pay-Fair M Premium (150 to 750 staff)</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:51%"></div></div><span class="p">3,061</span></div>
+      <div class="lrow"><span class="name">Pay-Fair S Advanced + ~20 consulting h</span><div class="ltrack"><div class="band" style="left:41.7%;width:58.3%"></div><div class="fill" style="width:61.7%"></div></div><span class="p">~3,700</span></div>
+      <div class="legend"><span>EUR ex VAT (axis 0 to 6,000)</span><span class="b">Brief's planned core package, 2,500 to 6,000</span></div>
+    </div>
+    <p class="foot">Pay-Fair prices were confirmed on its live price page on 26 Oct 2026. EY, PwC, Accace, ČSOB and ARROWS publish no prices. The last bar is an estimate. Barrier to entry: medium, easy to start and hard to win.</p>
+  </section>
+
+  <section>
+    <h2>Score breakdown</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Criterion</th><th class="n">Briefed</th><th class="n">Reshaped</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td>Demand and market size (20)</td><td class="n">10.0</td><td class="n">10.0</td><td>Real but dated: reporting starts 2028 for 150+, 2031 for 100 to 149. The 50 to 99 band has no reporting duty.</td></tr>
+        <tr><td>Unit economics (20)</td><td class="n">10.0</td><td class="n">12.0</td><td>About 70% margin, but 30 owner hours and 500 to 1,500 EUR acquisition per sale.</td></tr>
+        <tr><td>Competition and barriers (15)</td><td class="n">6.0</td><td class="n">6.75</td><td>Pay-Fair, Big-4, Accace and free Logib. No proven differentiation.</td></tr>
+        <tr><td>Capital required (10)</td><td class="n">9.0</td><td class="n">9.0</td><td>Base about 9k EUR, far under the cap.</td></tr>
+        <tr><td>Part-time feasibility (10)</td><td class="n">7.0</td><td class="n">8.0</td><td>About 9 to 10 h/week, peaks at deadlines.</td></tr>
+        <tr><td>Regulatory burden (10)</td><td class="n">4.0</td><td class="n">4.5</td><td>Unauthorised-legal-services gray zone, GDPR processor duties, wording limits.</td></tr>
+        <tr><td>Supply availability (5)</td><td class="n">2.5</td><td class="n">2.5</td><td>Lawyers available, but no white-label terms and one-lawyer dependency.</td></tr>
+        <tr><td>Scalability and optionality (5)</td><td class="n">2.5</td><td class="n">2.25</td><td>Refreshes and Slovakia help. The core is a one-time compliance wave.</td></tr>
+        <tr><td>Fit with your s.r.o. (5)</td><td class="n">3.0</td><td class="n">3.0</td><td>Analytics skills fit, HR and law do not. VAT-payer entity suits. Licences not assessed.</td></tr>
+        <tr><td><b>Total</b></td><td class="n"><b>54.0</b></td><td class="n"><b>58.0</b></td><td>Both below the 60 line for Investigate.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>What the law actually requires</h2>
+    <p>Checked against the bill text (psp.cz, sněmovní tisk 300). Several of the scout's claims did not hold.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Date</th><th>Duty</th><th>Applies to</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">1 Jan 2027</td><td>Written pay system (§109a). Tell applicants the minimum pay before signing, and no questions about past pay.</td><td>All employers</td></tr>
+        <tr><td class="mono">1 Jan 2028</td><td>Employees can ask for pay information, answered within 2 months.</td><td>All employers</td></tr>
+        <tr><td class="mono">1 Jan 2028</td><td>Gap report to the ministry by 30 April. 250+ staff annually, 150 to 249 every 3 years.</td><td>150+ staff</td></tr>
+        <tr><td class="mono">1 Jan 2031</td><td>First gap report.</td><td>100 to 149 staff</td></tr>
+        <tr><td class="mono">From 2028</td><td>Pay assessment if a 5%+ unjustified gap in a job group is not fixed in 6 months.</td><td>Reporting employers (100+)</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Corrections to the brief.</b> The bill does not require pay ranges in job ads, only proof that the applicant got the minimum pay before signing. The bill has had its first reading (16 and 20 Oct 2026) and sits in committees until about 20 Nov. It has not had a second reading. Fines reach 1M CZK only for the most serious breaches; others are 200,000 to 400,000 CZK.</div>
+    <div class="cols">
+      <div>
+        <h3>How to structure the service</h3>
+        <ul class="tight">
+          <li>Sell the method, data and process. The legal text (the §109a regulation, letters) comes from an advocate engaged separately, ideally by the client.</li>
+          <li>Pay the lawyer a fixed fee. No commission or referral fee either way.</li>
+          <li>Cap liability in the contract and get a professional indemnity quote at 5M CZK.</li>
+          <li>Act as a data processor with a processing agreement; do not reuse client data for benchmarks.</li>
+          <li>Do not claim "MPSV-certified", "official" or "guaranteed compliance".</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Questions for a lawyer</h3>
+        <ul class="tight">
+          <li>Does drafting the §109a regulation or templates for a fee count as unauthorised legal services?</li>
+          <li>May you bundle the lawyer's fee into yours, or refer clients to them for a fee?</li>
+          <li>Which fine applies to a missing pay system, and from when?</li>
+          <li>Liability caps and the managing director's personal exposure.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot">Research summary, not legal advice. The legal report ran on a cheaper model and its unauthorised-legal-services reading needs a Bar-registered advocate to confirm.</p>
+  </section>
+
+  <section>
+    <h2>First-year sketch</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Full package (as briefed)</th><th class="n">Low</th><th class="n">Base</th><th class="n">High</th></tr></thead>
+      <tbody>
+        <tr><td>Price, EUR</td><td class="n">2,500</td><td class="n">3,500</td><td class="n">5,000</td></tr>
+        <tr><td>Net per package after acquisition</td><td class="n">-600</td><td class="n">1,470</td><td class="n">3,800</td></tr>
+        <tr><td>Packages in year 1</td><td class="n">4</td><td class="n">6</td><td class="n">12</td></tr>
+        <tr><td>Year-1 result after one-offs, EUR</td><td class="n">-12,900</td><td class="n">+1,770</td><td class="n">+40,800</td></tr>
+        <tr><td>Break-even</td><td class="n">never</td><td class="n">month 9 to 10</td><td class="n">month 4 to 5</td></tr>
+        <tr><td>Steady-state profit per month, pre-tax</td><td class="n">negative</td><td class="n">~1,250</td><td class="n">3,000+</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Reshaped starter sprint</th><th class="n">Low</th><th class="n">Base</th><th class="n">High</th></tr></thead>
+      <tbody>
+        <tr><td>Starter price, EUR</td><td class="n">1,500</td><td class="n">2,000</td><td class="n">2,500</td></tr>
+        <tr><td>Net per starter</td><td class="n">550</td><td class="n">1,250</td><td class="n">1,900</td></tr>
+        <tr><td>Starters in year 1</td><td class="n">4</td><td class="n">9</td><td class="n">14</td></tr>
+        <tr><td>Year-1 result after one-offs, EUR</td><td class="n">-5,000</td><td class="n">+7,640</td><td class="n">+32,800</td></tr>
+        <tr><td>Break-even</td><td class="n">not in year 1</td><td class="n">month 7 to 9</td><td class="n">month 4 to 5</td></tr>
+        <tr><td>Steady-state profit per month, pre-tax</td><td class="n">negative</td><td class="n">~1,500</td><td class="n">2,500+</td></tr>
+      </tbody>
+    </table></div>
+    <p class="foot">To net 1,000 EUR a month after 21% corporate tax and 15% dividend tax you need about 1,490 EUR pre-tax. The client's all-in cost for the starter plus an advocate is about 2,500 to 3,500 EUR, close to Pay-Fair plus consulting hours. This is a one-time compliance wave, so year 2 is at risk. All figures are estimates built from the agents' reports.</p>
+  </section>
+
+  <section>
+    <h2>Top risks and what would change the verdict</h2>
+    <div class="cols">
+      <div>
+        <h3>Top 5 risks</h3>
+        <ul class="tight">
+          <li><b>Legal structure.</b> Without a lawyer the product is unsellable; with one, the lawyer owns the client.</li>
+          <li><b>Timing.</b> A 1 Jan 2027 start needs the Chamber, Senate and President. Slippage of weeks to months is plausible, and many employers will wait for 2028.</li>
+          <li><b>Price anchoring.</b> Pay-Fair, free Logib and cheap courses cap what buyers will pay for the commodity parts.</li>
+          <li><b>Credibility.</b> A non-HR, non-lawyer owner against EY and PwC. The 5% test is statistically weak in small job groups.</li>
+          <li><b>Capacity and volume.</b> 10 to 18 packages a year, in a one-time wave concentrated at 150 to 249 staff.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What would change my mind</h3>
+        <ul class="tight">
+          <li>An advocate confirms in writing a structure where the client hires the lawyer and you keep a defined scope.</li>
+          <li>At least 3 of 12 target employers have no plan and no vendor, and 2 agree to a paid 500 EUR diagnostic.</li>
+          <li>Leads cost under 80 EUR each, 5 or more from about 300 EUR of ads.</li>
+          <li>The bill passes second reading with the 1 Jan 2027 dates intact.</li>
+          <li>Pay-Fair or a C&B firm agrees to partner. Downgrade if the advocate says the drafting is unauthorised, or employers already bought elsewhere.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>30-day validation plan</h2>
+    <p>Target spend 500 to 1,000 EUR, all before building the kit.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Days</th><th>Test</th><th>Pass gate</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">1-5</td><td>One-hour paid consultation with a Bar-registered advocate on the structure; ask a quote for one template set (150 to 400 EUR).</td><td>Written yes/no, quote of 1,500 EUR or less</td></tr>
+        <tr><td class="mono">1-10</td><td>Three broker quotes for professional indemnity at 5M CZK, including legal-advice and client-fine exclusions.</td><td>1,000 EUR/yr or less, no legal-advice exclusion</td></tr>
+        <tr><td class="mono">1-25</td><td>12 to 15 interviews with HR directors or owners of 100 to 249 staff firms, starting with your cleaning and logistics network. Ask what they have bought, who owns it, what they would pay, then request a paid 500 EUR diagnostic.</td><td>3+ with no plan or vendor, 2+ yes to a paid pilot</td></tr>
+        <tr><td class="mono">5-20</td><td>Landing page for the sprint plus about 300 EUR of Google Ads on Czech terms ("transparentnost odměňování", "§109a"); LinkedIn outreach to 50 firms.</td><td>5+ qualified leads at 80 EUR or less each</td></tr>
+        <tr><td class="mono">10-25</td><td>Call 5 payroll bureaus or accountants, 3 law firms and Pay-Fair about referral or white-label terms; ask 2 freelance C&B experts for day rates.</td><td>1+ partner willing to refer or resell</td></tr>
+        <tr><td class="mono">5-25</td><td>Run Logib or the R package on synthetic data, draft the grading method on the four statutory criteria, and time a free pilot at one friendly company.</td><td>15 h or less for a starter, 30 h or less for a full package</td></tr>
+        <tr><td class="mono">28-30</td><td>Recheck psp.cz for tisk 300 (committee result, second-reading date, amendments) and decide.</td><td>See "what would change my mind"</td></tr>
+      </tbody>
+    </table></div>
+    <div class="gate"><b>Decision rule.</b> If the advocate rules the drafting unauthorised, or most interviewees already bought a solution, stop. If the upgrade conditions above are met, re-score as Investigate.</div>
+  </section>
+
+  <section>
+    <h2>Data gaps to close first</h2>
+    <ul class="tight">
+      <li>No Czech project prices from EY, PwC, Accace, ČSOB or boutiques, and it is unknown whether the ministry-funded EY audits are free to employers.</li>
+      <li>Willingness to pay and acquisition cost are estimates; no cost-per-click data for these keywords.</li>
+      <li>Current counts of employers with 150 to 249 staff by region and private sector (the 2020 figures are low-reliability and include public bodies).</li>
+      <li>The fine for a missing pay system, the draft decrees, Bar fee-sharing rules, and the EU directive's own thresholds (EUR-Lex was unreachable).</li>
+      <li>Bill status after 26 Oct 2026.</li>
+    </ul>
+    <p class="foot">Principal sources: psp.cz tisk 300 history (viewed 26 Oct 2026), pay-fair.cz/cenik, praceamzda.cz, epravo.cz, EY Czech Republic equal-pay pages, mpsv.gov.cz (Logib), platy.cz, AMSP/ČSÚ business-count analyses, zakonyprolidi.cz (Act 85/1996). Full report with every source tag: reports/2026-10-26-pay-transparency-readiness-mid-market.md. Research summary, not legal advice; verify with a Czech advocate and accountant before committing.</p>
+  </section>
+</main>

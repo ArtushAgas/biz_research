@@ -8,9 +8,7 @@
 - Regulated or gray-zone ideas are allowed; the legal burden must be flagged and reflected in the score.
 
 ## TO FILL IN (please complete; agents use it to score "fit")
-- What do the 2 s.r.o. do today? CZ-NACE codes and trade licenses (živnostenská oprávnění) they already hold:
-  - s.r.o. #1 (VAT payer):
-  - s.r.o. #2 (non-VAT):
+- s.r.o. NACE codes and trade licences: not provided on purpose. Focus is finding the right idea first; do not score "fit with existing s.r.o." on licences, and do not list licences as open questions. Only the VAT status matters (one s.r.o. is a VAT payer, the other is not).
 - Hours per week available: 20 hours
 - Skills / industries you know well: technology (ai, data analytics, building products, building online shops, ...); cars; physical retail; cafe; google ads;
 - Network (suppliers, experts, customers you can already reach): cleaning services; logistics (transportation of goods);
