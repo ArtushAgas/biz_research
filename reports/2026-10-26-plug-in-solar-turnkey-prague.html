@@ -1,0 +1,298 @@
+<title>Plug-in Solar Kits Prague</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single reading column; verdict banner first, then evidence in the order a decision-maker asks for it */
+:root {
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --fg: #14212b;
+  --muted: #5a6b78;
+  --line: #d9e0e5;
+  --ink: #0f3a52;
+  --pass: #b4411f;
+  --pass-bg: #fbe9e3;
+  --warn: #9a6a00;
+  --warn-bg: #fbf0d3;
+  --good: #1f7a4d;
+  --band: #d6e6ee;
+  --bar: #2b6f93;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d171e; --surface: #14212b; --fg: #e6edf1; --muted: #93a5b1; --line: #26384a;
+    --ink: #8cc4de; --pass: #f08a66; --pass-bg: #3a1f16; --warn: #e5b94d; --warn-bg: #33290f;
+    --good: #5fcf98; --band: #1d3342; --bar: #5aa6cb; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d171e; --surface: #14212b; --fg: #e6edf1; --muted: #93a5b1; --line: #26384a;
+  --ink: #8cc4de; --pass: #f08a66; --pass-bg: #3a1f16; --warn: #e5b94d; --warn-bg: #33290f;
+  --good: #5fcf98; --band: #1d3342; --bar: #5aa6cb; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 15px; line-height: 1.55;
+  padding-block: 28px 56px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(26px, 5vw, 38px); }
+h2 { font-size: 21px; color: var(--ink); }
+h3 { font-size: 16px; }
+p { margin: 0; }
+.eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+section { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: grid; gap: 20px; grid-template-columns: 1fr 1fr; }
+.verdict > div { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.pill { align-self: flex-start; font-family: var(--font-mono); font-size: 12px; font-weight: 500; padding: 3px 10px; border-radius: 99px; background: var(--pass-bg); color: var(--pass); letter-spacing: .06em; }
+.score { font-family: var(--font-display); font-size: 52px; font-weight: 700; line-height: 1; }
+.score small { font-size: 18px; color: var(--muted); font-weight: 600; }
+.meter { position: relative; height: 10px; background: var(--band); border-radius: 5px; margin-top: 4px; }
+.meter i { position: absolute; inset: 0 auto 0 0; background: var(--pass); border-radius: 5px; }
+.meter b { position: absolute; top: -4px; bottom: -4px; width: 2px; background: var(--fg); opacity: .55; }
+.ticks { position: relative; height: 16px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.ticks span { position: absolute; transform: translateX(-50%); }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.fact { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; min-width: 0; }
+.fact .k { font-size: 12px; color: var(--muted); }
+.fact .v { font-family: var(--font-mono); font-size: 15px; font-weight: 500; }
+ol.why { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; }
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-mono); font-size: 11.5px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); background: var(--bg); white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+td.n, th.n { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bar { display: grid; grid-template-columns: minmax(0, 1fr) 54px; gap: 10px; align-items: center; }
+.bar .t { height: 8px; background: var(--band); border-radius: 4px; position: relative; }
+.bar .t i { position: absolute; inset: 0 auto 0 0; background: var(--bar); border-radius: 4px; }
+.ladder { display: flex; flex-direction: column; gap: 6px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.lrow { display: grid; grid-template-columns: minmax(120px, 190px) minmax(0, 1fr) 62px; gap: 10px; align-items: center; font-size: 13px; }
+.lrow .name { min-width: 0; overflow-wrap: anywhere; }
+.ltrack { position: relative; height: 16px; }
+.ltrack .band { position: absolute; top: 0; bottom: 0; background: var(--warn-bg); border-left: 1px dashed var(--warn); border-right: 1px dashed var(--warn); }
+.ltrack .fill { position: absolute; top: 3px; bottom: 3px; left: 0; background: var(--bar); border-radius: 0 3px 3px 0; }
+.lrow .p { text-align: right; font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.legend { font-size: 12.5px; color: var(--muted); display: flex; gap: 14px; flex-wrap: wrap; }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; margin-right: 6px; border-radius: 2px; background: var(--bar); vertical-align: -1px; }
+.legend span.b::before { background: var(--warn-bg); border: 1px dashed var(--warn); }
+.note { background: var(--warn-bg); color: var(--fg); border-radius: 8px; padding: 12px 14px; font-size: 14px; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cols > div { min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+ul.tight { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 6px; }
+.gate { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--pass); border-radius: 8px; padding: 12px 14px; }
+.foot { font-size: 12.5px; color: var(--muted); }
+a { color: var(--ink); }
+@media (max-width: 640px) {
+  .verdict, .cols { grid-template-columns: 1fr; }
+  .lrow { grid-template-columns: 1fr 62px; }
+  .lrow .ltrack { grid-column: 1 / -1; order: 3; }
+}
+</style>
+
+<main>
+  <header style="display:flex;flex-direction:column;gap:10px">
+    <span class="eyebrow">Daily idea · 26 Oct 2026 · ecommerce-import</span>
+    <h1>Turnkey plug-in solar kits for Prague flats</h1>
+    <p style="color:var(--muted)">Import 800 W balcony solar sets from Germany or Poland and sell them with the bracket, paperwork help and an installer referral. Assessed by five independent research agents from the scout brief, competition, supply and legal reports.</p>
+  </header>
+
+  <section class="verdict" aria-label="Verdict">
+    <div>
+      <span class="pill">PASS · AS BRIEFED</span>
+      <div class="score">36.5<small> / 100</small></div>
+      <div class="meter"><i style="width:36.5%"></i><b style="left:60%"></b><b style="left:75%"></b></div>
+      <div class="ticks"><span style="left:60%">60</span><span style="left:75%">75</span></div>
+      <p style="font-size:13px;color:var(--muted)">Stocked inventory, about 30k EUR, 8 to 12 h/week. Confidence: medium.</p>
+    </div>
+    <div>
+      <span class="pill" style="background:var(--warn-bg);color:var(--warn)">PASS · BORDERLINE</span>
+      <div class="score">54.5<small> / 100</small></div>
+      <div class="meter"><i style="width:54.5%;background:var(--warn)"></i><b style="left:60%"></b><b style="left:75%"></b></div>
+      <div class="ticks"><span style="left:60%">60</span><span style="left:75%">75</span></div>
+      <p style="font-size:13px;color:var(--muted)">Reduced variant: lead-gen, no stock, about 7k EUR, 6 to 10 h/week. Worth a cheap 30-day test only.</p>
+    </div>
+  </section>
+
+  <div class="facts">
+    <div class="fact"><div class="k">Capital (as briefed)</div><div class="v">28 to 34k EUR</div></div>
+    <div class="fact"><div class="k">Base gross per kit</div><div class="v">~65 EUR (14%)</div></div>
+    <div class="fact"><div class="k">Kits/month for 1,000 EUR</div><div class="v">~18</div></div>
+    <div class="fact"><div class="k">Regulatory burden</div><div class="v">High</div></div>
+    <div class="fact"><div class="k">Best entity</div><div class="v">VAT-payer s.r.o.</div></div>
+  </div>
+
+  <section>
+    <h2>Why, in five lines</h2>
+    <ol class="why">
+      <li><b>The margin is not there.</b> Base gross on the kit is about 65 EUR (14%) at 13,500 CZK. Lidl and Kaufland anchor the bare kit at 8,000 to 10,000 CZK.</li>
+      <li><b>Paperwork is a weaker selling point than assumed.</b> Today's route is a simple contract application (vyhláška 16/2016 §16), not a notification, and it disappears if the simplified regime passes. The real pain is zero-export hardware, the meter swap and SVJ or landlord consent.</li>
+      <li><b>Demand is unproven.</b> There is no Czech unit count. One seller reported about 20 kits a month in 2023. The closest earlier attempt (Be4You on Donio, July 2024) raised 0 of 300,000 CZK.</li>
+      <li><b>Regulation is heavy as briefed.</b> Importer duties under GPSR, WEEE, product liability and an open question whether an 860 Wp panel set counts as "above 800 W". Stock bought now sits through winter and can strand if the law changes.</li>
+      <li><b>A no-stock variant fits you</b> (Google Ads, shop building, building network) and costs under 10k EUR, but earns little per customer. It is a test, not yet a business.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>What Czech shoppers pay today</h2>
+    <p>The compliant tier from small shops already sits inside the 12,000 to 16,000 CZK range the brief planned as a premium, with no service attached.</p>
+    <div class="ladder" role="img" aria-label="Bar chart of Czech retail prices for 800 W plug-in solar sets in CZK, with the brief's planned 12,000 to 16,000 CZK range shaded">
+      <div class="lrow"><span class="name">Lidl Vale EcoFlow, promo</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:50%"></div></div><span class="p">7,999</span></div>
+      <div class="lrow"><span class="name">Kaufland.cz 830 W</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:56.2%"></div></div><span class="p">8,990</span></div>
+      <div class="lrow"><span class="name">ECOprodukt Growatt 940 Wp</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:57.9%"></div></div><span class="p">9,263</span></div>
+      <div class="lrow"><span class="name">Lidl Vale 860 Wp</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:62.5%"></div></div><span class="p">9,999</span></div>
+      <div class="lrow"><span class="name">Ekoelektrarna, smart meter</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:79.4%"></div></div><span class="p">12,700</span></div>
+      <div class="lrow"><span class="name">Nejlevnejsitzb (Tipa)</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:81.2%"></div></div><span class="p">12,990</span></div>
+      <div class="lrow"><span class="name">Puhy, smart meter</span><div class="ltrack"><div class="band" style="left:75%;width:25%"></div><div class="fill" style="width:92.8%"></div></div><span class="p">14,852</span></div>
+      <div class="legend"><span>Price incl. VAT, CZK (axis 0 to 16,000)</span><span class="b">Brief's planned range, 12,000 to 16,000</span></div>
+    </div>
+    <p class="foot">Sources: Zboží.cz search 2026-10-26, arecenze.cz (26 May 2026), Kaufland.cz via search snippets. Battery bundles (22,000 to 38,000 CZK) are not shown. Barrier to entry: medium to medium-high, easy to enter and hard to earn a margin.</p>
+  </section>
+
+  <section>
+    <h2>Score breakdown</h2>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Criterion</th><th>Score</th><th class="n">Pts / max</th><th>Reason</th></tr></thead>
+      <tbody>
+        <tr><td>Demand and market size</td><td><div class="bar"><div class="t"><i style="width:40%"></i></div><span class="mono">4/10</span></div></td><td class="n">8.0 / 20</td><td>German boom came from deregulation. No Czech count. Flat owners need SVJ consent.</td></tr>
+        <tr><td>Unit economics</td><td><div class="bar"><div class="t"><i style="width:20%"></i></div><span class="mono">2/10</span></div></td><td class="n">4.0 / 20</td><td>14% gross. About 18 kits a month needed, close to the 2023 market leader's whole volume.</td></tr>
+        <tr><td>Competition and barriers</td><td><div class="bar"><div class="t"><i style="width:30%"></i></div><span class="mono">3/10</span></div></td><td class="n">4.5 / 15</td><td>Fragmented, but Lidl and Kaufland set the price.</td></tr>
+        <tr><td>Capital required</td><td><div class="bar"><div class="t"><i style="width:60%"></i></div><span class="mono">6/10</span></div></td><td class="n">6.0 / 10</td><td>About 30k EUR, half of it stock exposed to price and legal risk.</td></tr>
+        <tr><td>Part-time feasibility</td><td><div class="bar"><div class="t"><i style="width:40%"></i></div><span class="mono">4/10</span></div></td><td class="n">4.0 / 10</td><td>About 1.5 to 2 h per customer; not delegable.</td></tr>
+        <tr><td>Regulatory burden</td><td><div class="bar"><div class="t"><i style="width:30%"></i></div><span class="mono">3/10</span></div></td><td class="n">3.0 / 10</td><td>Importer role, WEEE, CE file, liability, GDPR, agent role.</td></tr>
+        <tr><td>Supply availability</td><td><div class="bar"><div class="t"><i style="width:50%"></i></div><span class="mono">5/10</span></div></td><td class="n">2.5 / 5</td><td>Many commodity suppliers, but no wholesale quote anywhere.</td></tr>
+        <tr><td>Scalability and optionality</td><td><div class="bar"><div class="t"><i style="width:40%"></i></div><span class="mono">4/10</span></div></td><td class="n">2.0 / 5</td><td>Can pivot to lead-gen, but stock strands if the spec or law changes.</td></tr>
+        <tr><td>Fit with your s.r.o.</td><td><div class="bar"><div class="t"><i style="width:50%"></i></div><span class="mono">5/10</span></div></td><td class="n">2.5 / 5</td><td>Needed trades are free trades. Your existing licences are unknown.</td></tr>
+        <tr><td><b>Total, as briefed</b></td><td></td><td class="n"><b>36.5 / 100</b></td><td>Reduced variant scores 54.5.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <h2>Supply and margin</h2>
+    <p>No wholesale price list exists publicly. Supply built the cost from component prices. The scout's 100 to 150 EUR per kit does not hold: it needs a 16,000 CZK price with 250 EUR landed cost.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>EUR net per unit</th><th class="n">Low</th><th class="n">Base</th><th class="n">High</th></tr></thead>
+      <tbody>
+        <tr><td>Kit landed (2×430 Wp + 800 W microinverter)</td><td class="n">205</td><td class="n">240</td><td class="n">295</td></tr>
+        <tr><td>Turnkey cost (kit, bracket, zero-export device, fees)</td><td class="n">305</td><td class="n">385</td><td class="n">505</td></tr>
+        <tr><td>Judge's gross per kit at a market-clearing price</td><td class="n">-19</td><td class="n">65</td><td class="n">152</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">The biggest cost unknown is the zero-export device that works with the chosen inverter under PRE, ČEZ or EG.D. Estimates range from 50 to 165 EUR. First supplier calls: Solarity (Prague distributor, Deye partner), Balkonstrom B2B, sun.store, Solartraders, Maysun.</div>
+  </section>
+
+  <section>
+    <h2>Legal and regulatory</h2>
+    <p>The legal report corrected the scout. Burden: <b>High</b> as briefed, medium for pure retail. Research summary, not legal advice.</p>
+    <div class="cols">
+      <div>
+        <h3>What the law says</h3>
+        <ul class="tight">
+          <li>Simplified connection (vyhl. 16/2016 §16) is a contract application with 0 kW reserved capacity, not a notification.</li>
+          <li>Revision report and impedance measurement apply only above 800 W installed. An 860 Wp panel set may count as above 800 W, so ask PRE in writing before buying stock.</li>
+          <li>Export to the grid must be technically prevented. Cheap German-style kits may not connect as sold.</li>
+          <li>Prague is mostly PREdistribuce; it needs no impedance measurement or A1 document up to 800 W with zero export.</li>
+          <li>Amendment 1054 (free e-notification) failed in the Chamber in July 2026. Its current status is unconfirmed; check psp.cz tisk 67.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What you would need</h3>
+        <ul class="tight">
+          <li>Free trades: retail (item 48), brokerage (47), consultancy (60). Installing is a regulated craft trade, so refer it out.</li>
+          <li>GPSR importer or distributor duties, CE file, WEEE registration, product-liability insurance before 9 Dec 2026.</li>
+          <li>VAT 21% appears to apply to kits and installation (accountant to confirm).</li>
+          <li>Use the existing VAT-payer s.r.o. The non-VAT one would lose input VAT and trip the 2M CZK and 326,000 CZK limits.</li>
+          <li>GDPR roles and a power of attorney for the paperwork service.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>First-year sketch</h2>
+    <p>A year-1 base case that loses money, and a payback longer than five years on about 30k EUR.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>As briefed (stocked)</th><th class="n">Low</th><th class="n">Base</th><th class="n">High</th></tr></thead>
+      <tbody>
+        <tr><td>Price, CZK incl. VAT</td><td class="n">12,700</td><td class="n">13,500</td><td class="n">14,500</td></tr>
+        <tr><td>Contribution per kit, EUR</td><td class="n">-49</td><td class="n">73</td><td class="n">177</td></tr>
+        <tr><td>Kits in year 1</td><td class="n">25</td><td class="n">65</td><td class="n">150</td></tr>
+        <tr><td>Year-1 result after one-offs, EUR</td><td class="n">≈ -10,000</td><td class="n">≈ -4,000</td><td class="n">≈ +16,000</td></tr>
+        <tr><td>Kits/month for 1,000 EUR</td><td class="n">n/a</td><td class="n">≈ 18</td><td class="n">≈ 7</td></tr>
+        <tr><td>Hours/week</td><td class="n">8</td><td class="n">10</td><td class="n">18</td></tr>
+      </tbody>
+    </table></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Reduced variant (no stock)</th><th class="n">Low</th><th class="n">Base</th><th class="n">High</th></tr></thead>
+      <tbody>
+        <tr><td>Contribution per customer, EUR</td><td class="n">25</td><td class="n">110</td><td class="n">150</td></tr>
+        <tr><td>Customers in year 1</td><td class="n">15</td><td class="n">60</td><td class="n">150</td></tr>
+        <tr><td>Year-1 operating result, EUR</td><td class="n">≈ -2,600</td><td class="n">≈ +3,600</td><td class="n">≈ +19,500</td></tr>
+        <tr><td>Customers/month for 1,000 EUR</td><td class="n">n/a</td><td class="n">≈ 11</td><td class="n">≈ 8</td></tr>
+        <tr><td>Payback on ~7k EUR</td><td class="n">none</td><td class="n">~2 years</td><td class="n">&lt; 1 year</td></tr>
+      </tbody>
+    </table></div>
+    <p class="foot">1,000 EUR a month of company profit leaves about 670 EUR after 21% corporate tax and 15% dividend tax (withholding unconfirmed). Customers save about 3,000 CZK a year, so payback is 6 to 8 years once installation is included. That caps demand. All section figures are estimates built from the agents' reports.</p>
+  </section>
+
+  <section>
+    <h2>Top risks and what would change the verdict</h2>
+    <div class="cols">
+      <div>
+        <h3>Top 5 risks</h3>
+        <ul class="tight">
+          <li><b>Price war.</b> A 14% gross absorbs almost no surprise.</li>
+          <li><b>Regulatory swing.</b> If the simplified regime passes, paperwork revenue vanishes. If it fails, the market stays small.</li>
+          <li><b>Compliance and liability.</b> Importer duties, the 800 W ambiguity, fire or injury claims aimed at the seller.</li>
+          <li><b>Unproven demand.</b> No Czech volumes; the one comparable service launch got zero pledges.</li>
+          <li><b>Third parties.</b> Installers, distributors and SVJs decide the customer's outcome.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>What would change my mind</h3>
+        <ul class="tight">
+          <li>A written quote at or below 230 EUR landed for a 2×400 Wp kit at 40 pieces, with CE and grid-code certificates.</li>
+          <li>Written PRE confirmation that the kit plus a named export limiter connects with no revision.</li>
+          <li>At least 8 paid deposits for a 2,500 CZK pack at 30 EUR or less per lead.</li>
+          <li>An installer paying 75 EUR or more per referral.</li>
+          <li>Passage of the simplified regime (pivot to accessories) or its final rejection (compliance-pack niche only).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>30-day validation plan</h2>
+    <p>Cash budget about 1,000 to 1,500 EUR. Buy no stock before the gate.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Days</th><th>Test</th><th>Pass gate</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">1-2</td><td>Check both s.r.o. on rzp.cz for NACE and licences. Check psp.cz (tisk 67) and the Senate for the amendment's status.</td><td>Licences and law status known</td></tr>
+        <tr><td class="mono">1-7</td><td>Request quotes from Solarity, Balkonstrom B2B, sun.store, Solartraders and Maysun for 5 and 40 pieces of a 2×400 Wp kit, with CE declaration and EN 50549-1 certificate.</td><td>40 pcs at or below 230 EUR landed, or dropship at or below ~260</td></tr>
+        <tr><td class="mono">1-10</td><td>Ask PRE, EG.D and ČEZ in writing: 800 W threshold (Wp or VA), A1 document, accepted export-prevention devices, meter swap time.</td><td>Written no-revision case</td></tr>
+        <tr><td class="mono">3-14</td><td>Ask 5 Prague electricians and 1 to 2 revision technicians for fixed prices and referral fees.</td><td>At least 2 accept 50 to 100 EUR per referral</td></tr>
+        <tr><td class="mono">3-14</td><td>Through your cleaning and logistics network, interview 5 property managers or SVJ chairs about consent.</td><td>At least 2 would buy a consent pack</td></tr>
+        <tr><td class="mono">5-30</td><td>Landing page selling a 2,500 CZK "compliance and consent pack" as a refundable pre-order. Google Ads on "balkonová fotovoltaika Praha", "přihláška PRE balkonová fotovoltaika", "SVJ souhlas fotovoltaika" (600 to 800 EUR).</td><td>CPC at most 0.5 EUR, 25+ leads, 8+ paid deposits</td></tr>
+        <tr><td class="mono">15-25</td><td>Mystery-shop Ekoelektrarna and one installer. Pull Keyword Planner volumes and Google Trends for CZ.</td><td>Search demand supports ~10 customers a month</td></tr>
+        <tr><td class="mono">20-28</td><td>30-minute accountant call (VAT 21% or 12%, WEEE) and a 1-hour lawyer review of the top three legal questions.</td><td>No blocker</td></tr>
+      </tbody>
+    </table></div>
+    <div class="gate"><b>Day-30 gate.</b> Ad budget spent with fewer than 3 paid deposits: kill the idea. Eight or more deposits and a supplier quote at or below 230 EUR: re-score as Investigate.</div>
+  </section>
+
+  <section>
+    <h2>Data gaps to close first</h2>
+    <ul class="tight">
+      <li>No wholesale quote and no cost for the zero-export device (50 to 165 EUR across reports).</li>
+      <li>Czech unit count, search volumes and cost per click; Heureka and Kaufland live pages returned 403, so some prices come from search snippets.</li>
+      <li>Current status of amendment 1054 after the Senate's 20 August return, and ČEZ's real practice for balcony kits.</li>
+      <li>Your two s.r.o. NACE codes and trade licences (profile left blank), referral fees and Prague installer rates, WEEE fees, the VAT rate on installation.</li>
+      <li>The 1,700 CZK/kWh feed-in penalty seen in the press could not be verified and is not used.</li>
+    </ul>
+    <p class="foot">Principal sources: kleineskraftwerk.de (Sept 2026 figures), solarnimagazin.cz (17 Aug 2026), arecenze.cz (May to Sept 2026), zakonyprolidi.cz (vyhl. 16/2016, Energy Act 458/2000, VAT Act 235/2004, Act 250/2021), predistribuce.cz, egd.cz, cezdistribuce.cz, Zboží.cz, Kaufland.cz, Donio.cz, Firmy.cz, Solarserver module index 09/2026, CNB rate 23.10.2026. Full report with every source tag: reports/2026-10-26-plug-in-solar-turnkey-prague.md. Research summary, not legal advice; verify with a Czech lawyer and accountant before committing.</p>
+  </section>
+</main>
