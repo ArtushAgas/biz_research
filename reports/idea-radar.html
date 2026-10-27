@@ -1,0 +1,65 @@
+<title>Idea Radar</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: ledger-style sortable table of every idea, newest batch highlighted */
+:root{--bg:#f3f5f4;--fg:#16201d;--muted:#5b6a65;--line:#d3dbd8;--panel:#fff;--accent:#0d6b57;--hi:#e0f0ea;--good:#1f7a4d;--mid:#a86a00;--bad:#a63a3a;--font:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1715;--fg:#e3ebe8;--muted:#93a39d;--line:#2a3733;--panel:#16211e;--accent:#4cc2a4;--hi:#1b3029;--good:#5fd194;--mid:#e0a13a;--bad:#e07a7a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1715;--fg:#e3ebe8;--muted:#93a39d;--line:#2a3733;--panel:#16211e;--accent:#4cc2a4;--hi:#1b3029;--good:#5fd194;--mid:#e0a13a;--bad:#e07a7a;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.5;padding-block:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:1080px;margin:0 auto}
+h1{font-size:1.8rem;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px}
+.stats{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:16px;font-family:var(--mono);font-size:.85rem}
+.stats b{font-size:1.2rem;display:block}
+.ctl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+button{font:inherit;background:var(--panel);color:var(--fg);border:1px solid var(--line);padding:6px 12px;cursor:pointer}
+button[aria-pressed=true]{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{overflow-x:auto;border:1px solid var(--line);background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:760px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:600}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.today td{background:var(--hi)}
+.slug{font-weight:600;overflow-wrap:anywhere}
+.tag{font-family:var(--mono);font-size:.75rem;padding:1px 6px;border:1px solid var(--line)}
+.good{color:var(--good)}.mid{color:var(--mid)}.bad{color:var(--bad)}
+a{color:var(--accent)}
+.note{color:var(--muted);font-size:.85rem;margin-top:14px}
+</style>
+<main>
+<h1>Idea Radar</h1>
+<p class="sub">Every Prague/Czechia idea researched so far. Updated 2026-10-27. Today's screen is highlighted.</p>
+<div class="stats"><span><b>3</b>deep-dived</span><span><b>5</b>screened today</span><span><b>0</b>Go verdicts</span></div>
+<div class="ctl" role="group" aria-label="Sort">
+<button data-s="date" aria-pressed="true">Newest</button><button data-s="score" aria-pressed="false">Score</button><button data-s="cat" aria-pressed="false">Category</button>
+</div>
+<div class="wrap"><table><thead><tr><th>Idea</th><th>Category</th><th>Score</th><th>Stage / outcome</th><th>Capex</th><th>Why</th></tr></thead><tbody id="rows"></tbody></table></div>
+<p class="note">Deep-dive score shows the reshaped or reduced variant in brackets. Screen scores are preliminary and use few sources; the gate for a deep dive is 55. Not legal or tax advice.</p>
+</main>
+<script>
+var R=[
+{d:"2026-10-27",o:0,slug:"eshop-coi-compliance-scanner-cz",cat:"digital-saas",s:47,out:"Screened, dropped",capex:"8-15k est.",why:"GPSR/cookie apps at USD 0-13/mo cap price; scan finds presence, not legal correctness; Shoptet or law firms could bundle.",today:1},
+{d:"2026-10-27",o:1,slug:"nis2-lite-compliance-kit-cz",cat:"digital-saas",s:38,out:"Screened, dropped",capex:"5-12k est.",why:"Free NÚKIB manual and Advisera's full Czech kit; peak window ends about end 2026.",today:1},
+{d:"2026-10-27",o:2,slug:"svj-self-management-platform-cz",cat:"digital-saas",s:38,out:"Screened, dropped",capex:"15-30k est.",why:"Incumbents exist; e-signature validity for per rollam votes unsettled; slow sales to volunteer boards.",today:1},
+{d:"2026-10-27",o:3,slug:"eaa-accessibility-monitor-cz",cat:"digital-saas",s:34,out:"Screened, dropped",capex:"6-12k est.",why:"Czech tool from USD 9/mo plus free tools; light enforcement; micro-firms exempt.",today:1},
+{d:"2026-10-27",o:4,slug:"eet2-micro-merchant-pos-lite-cz",cat:"digital-saas",s:17,out:"Screened, dropped",capex:"15-30k est.",why:"Free state MOJE EET app covers the segment; crowded POS market.",today:1},
+{d:"2026-10-27",o:5,slug:"robot-vacuum-parts-repair-shop-cz",cat:"ecommerce-import",s:57,v:"(reduced 61.5)",out:"Deep dive: Pass",capex:"28k (reduced 13k)",why:"Pass at full scope; reduced variant scores higher.",link:"https://claude.ai/artifact/HkZr5XmK8Xj8pKepAeLDGu"},
+{d:"2026-10-26",o:6,slug:"pay-transparency-readiness-mid-market",cat:"b2b-services",s:54,v:"(reshaped 58)",out:"Deep dive: Pass",capex:"9k (reshaped 6k)",why:"Close to the bar; reshaped variant scores 58.",link:"https://claude.ai/artifact/QAaxx58DJU5fMByMopQEXt"},
+{d:"2026-10-26",o:7,slug:"plug-in-solar-turnkey-prague",cat:"ecommerce-import",s:36.5,v:"(reduced 54.5)",out:"Deep dive: Pass",capex:"30k (reduced 7k)",why:"Weak at full scope; reduced variant 54.5.",link:"https://claude.ai/artifact/X1VyiuthZhkK91JQfdq18Q"}
+];
+var mode="date",tb=document.getElementById("rows");
+function cls(s){return s>=55?"good":s>=40?"mid":"bad"}
+function esc(t){var e=document.createElement("div");e.textContent=t;return e.innerHTML}
+function draw(){
+var a=R.slice();
+if(mode=="score")a.sort(function(x,y){return y.s-x.s});
+else if(mode=="cat")a.sort(function(x,y){return x.cat<y.cat?-1:x.cat>y.cat?1:y.s-x.s});
+else a.sort(function(x,y){return x.d<y.d?1:x.d>y.d?-1:y.s-x.s});
+tb.innerHTML=a.map(function(r){
+var name=r.link?'<a class="slug" href="'+r.link+'">'+esc(r.slug)+'</a>':'<span class="slug">'+esc(r.slug)+'</span>';
+return '<tr'+(r.today?' class="today"':'')+'><td>'+name+'<br><span class="tag">'+r.d+'</span></td><td>'+esc(r.cat)+'</td><td class="n '+cls(r.s)+'">'+r.s+(r.v?'<br>'+r.v:'')+'</td><td>'+esc(r.out)+'</td><td class="n">'+esc(r.capex)+'</td><td>'+esc(r.why)+'</td></tr>'}).join("");
+}
+document.querySelectorAll("button[data-s]").forEach(function(b){b.onclick=function(){mode=b.dataset.s;document.querySelectorAll("button[data-s]").forEach(function(x){x.setAttribute("aria-pressed",x===b)});draw()}});
+draw();
+</script>
