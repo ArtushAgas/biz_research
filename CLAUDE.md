@@ -10,4 +10,6 @@ Daily pipeline that researches ONE business idea for Prague/Czechia and ends wit
 - Prices: record currency, VAT included or excluded, date seen, and URL. Convert to EUR and CZK at a stated rate.
 - The competition, supply and legal agents work independently from the same idea brief and must not read each other's reports.
 - Legal findings are a research summary, not legal advice. Regulated goods (tobacco, CBD, construction products, vehicles) must be flagged for lawyer/accountant verification.
-- Files: full reports in `reports/YYYY-MM-DD-<slug>.md`; one line per idea appended to `ideas-log.md`; artifact URLs in `state/artifacts.json`.
+- Two-stage flow: `/daily-idea` screens 5 candidates (scout in screen mode + 5 parallel `idea-screener` agents), then runs `/deep-dive` (competition, supply, legal, judge) only on a candidate that clears the gate. See `.claude/commands/daily-idea.md`.
+- Files: full reports in `reports/YYYY-MM-DD-<slug>.md`; one line per deep-dived idea in `ideas-log.md`; one line per screened candidate in `screened-ideas.md`; artifact URLs (including the Idea Radar `index`) in `state/artifacts.json`.
+- Cloud runs: some hosts may be blocked by the sandbox; say so in the report instead of guessing, and rely on primary sources when reachable.

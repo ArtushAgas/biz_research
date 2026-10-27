@@ -31,3 +31,10 @@ Output exactly this structure (max ~1 page):
 - **Runner-up ideas** (name only, one line each)
 
 Be honest: if a category has no good idea today, pick the least bad and say so. Do not invent statistics.
+
+## Screen mode
+When the orchestrator asks for "screen mode" with a category, do NOT pick one idea. Instead:
+- Read `profile.md`, `ideas-log.md` and `screened-ideas.md` (never repeat or re-skin any idea in them).
+- Return exactly 5 distinct candidates in that category (at most 40 tool calls in total, mostly searches). Vary the type: at least 2 should be proven models from another market (PL, HU, SK, DE, AT, FR, NL...) with little Czech competition, and none may be a pure commodity resale with an obvious Lidl/Kaufland-style price anchor unless you found a differentiated angle.
+- Each candidate in at most ~120 words, in this form: `slug | name`, one-line concept, why Prague / why now (one cited fact), origin-market proof (one cited fact), rough capital (EUR) and hours/week, the price the customer would pay, the single biggest risk. Tag figures [sourced: URL, date] or [estimate: assumption].
+- End with a one-line note on any category-wide pattern (for example "all candidates depend on a pending law").

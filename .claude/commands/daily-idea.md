@@ -1,24 +1,32 @@
 ---
-description: Run the daily Prague business-idea research pipeline (scout, competition, supply, legal, judge) and publish the report
-argument-hint: [optional category or theme override]
+description: Run the daily two-stage Prague business-idea pipeline (screen 5 candidates, deep-dive the best if it clears the bar), update the idea radar and notify
+argument-hint: [optional category/theme override, or "deep: <slug>" to deep-dive a logged candidate]
 ---
 
-Run today's business-idea pipeline. Optional override from the user: $ARGUMENTS
+Run today's two-stage pipeline. Optional override from the user: $ARGUMENTS
 
-1. **Prepare.** Read `profile.md` and `ideas-log.md`. Choose today's category by rotation: count existing lines in `ideas-log.md`, take that number modulo 5 over `digital-saas, b2b-services, ecommerce-import, local-physical, trade-regulated`. A category or theme in `$ARGUMENTS` or the profile's "Weekly theme" overrides rotation. Get today's date.
+## Stage 0: prepare
+Read `CLAUDE.md`, `profile.md`, `ideas-log.md`, `screened-ideas.md`. Get today's date. Choose today's category by rotation over `digital-saas, b2b-services, ecommerce-import, local-physical, trade-regulated`: count the DISTINCT dates in `screened-ideas.md`, take that number modulo 5. A category or theme in `$ARGUMENTS` or the profile's "Weekly theme" overrides rotation. If `$ARGUMENTS` starts with "deep:", skip Stage 1 and go straight to Stage 2 for that logged candidate.
 
-2. **Scout.** Invoke the `idea-scout` agent with the category and the instruction to read `profile.md` and `ideas-log.md`. It returns the idea brief. If the brief violates the budget, part-time or veto constraints, send it back once.
+## Stage 1: screen (cheap, broad)
+1. Invoke `idea-scout` in **screen mode** with the category. It returns 5 candidate briefs.
+2. In a single message invoke 5 `idea-screener` agents in parallel, one per candidate, each given ONLY its own candidate brief.
+3. Rank candidates by preliminary score. Append one line per candidate to `screened-ideas.md`: `date | slug | category | screen score | outcome | main reason`. Outcome is `deep-dive` for the winner if it goes on, otherwise `dropped`.
 
-3. **Independent research, in parallel.** In a single message, invoke `competition-analyst`, `supply-sourcing` and `legal-czech`. Give each ONLY the full idea brief (legal-czech also reads `profile.md`). Do not pass any agent another agent's output.
+## Decision gate
+Run Stage 2 on the top candidate if ANY of these holds:
+- its screen score is 55 or higher;
+- no deep dive was logged in `ideas-log.md` within the last 7 days (weekly deep dive: take the top candidate even if it scored lower, and say so in the notification);
+- the user forced it with "deep:".
+Otherwise skip Stage 2 and say why.
 
-4. **Judge.** Invoke `venture-judge` with the idea brief and the full text of all three reports. It returns the scored decision report.
+## Stage 2: deep dive
+Follow `.claude/commands/deep-dive.md` for the chosen candidate (brief plus screen notes). It writes the report, the log line and the artifact.
 
-5. **Persist.**
-   - Write the report to `reports/<YYYY-MM-DD>-<slug>.md`.
-   - Append one line to `ideas-log.md`: `date | slug | category | score | verdict | capex EUR | report path`.
+## Stage 3: radar and notify
+1. Regenerate the **Idea Radar** index artifact: one private HTML page listing every idea in `ideas-log.md` (deep-dived: score, verdict, capital, artifact link) and `screened-ideas.md` (screened: score, outcome, main reason), sortable by score and category, newest first, with today's screen results highlighted. Load the `artifact-design` skill first. Publish it: if `state/artifacts.json` has an `index` URL, publish to that URL; otherwise publish new and record the URL under `index`.
+2. Send one PushNotification (plain text, under 200 characters). Deep-dive day: idea name, verdict, score, link. Screen-only day: "Screened 5 <category> ideas; best <name> <score>, no deep dive" and the Idea Radar link. If something failed, say what failed.
+3. Commit all changed files; push to origin main (if main is refused, push to `daily/<date>` and say so).
 
-6. **Publish.** Load the `artifact-design` skill, build a private HTML artifact from the report (verdict banner, score breakdown, tables, sources), and publish it with the Artifact tool. Then create or update the index artifact (all ideas, sortable by score/category) at the URL in `state/artifacts.json`, and record URLs there. If artifact publishing is unavailable in this environment, say so and leave the report file as the deliverable.
-
-7. **Commit** the new files if this is a git repository.
-
-8. **Reply** with: idea name, verdict, score, capital needed, hours/week, the 3 main reasons, the artifact link, and any data gaps the owner should check first.
+## Final reply
+State the category, the 5 candidates with screen scores, whether Stage 2 ran and why, the artifact links, anything that failed, and data gaps worth closing.
