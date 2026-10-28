@@ -30,7 +30,7 @@ a{color:var(--accent)}
 <main>
 <h1>Idea Radar</h1>
 <p class="sub">Every Prague/Czechia idea researched so far. Updated 2026-10-28. Today's screen is highlighted.</p>
-<div class="stats"><span><b>4</b>deep-dived</span><span><b>10</b>screened (5 today)</span><span><b>0</b>Go verdicts</span></div>
+<div class="stats"><span><b>4</b>deep-dived</span><span><b>15</b>screened (5 today)</span><span><b>0</b>Go verdicts</span></div>
 <div class="ctl" role="group" aria-label="Sort">
 <button data-s="date" aria-pressed="true">Newest</button><button data-s="score" aria-pressed="false">Score</button><button data-s="cat" aria-pressed="false">Category</button>
 </div>
@@ -39,11 +39,16 @@ a{color:var(--accent)}
 </main>
 <script>
 var R=[
-{d:"2026-10-28",o:0,slug:"lease-return-prep-fleet-cz",cat:"b2b-services",s:40,out:"Screened, dropped",capex:"5-12k est.",why:"Lessors own the touchpoint (VWFS/DEKRA inspection 920 CZK); needs 100+ cars/yr from hard-to-reach fleets.",today:1},
-{d:"2026-10-28",o:1,slug:"kitchen-exhaust-duct-cleaning-gastro-prague",cat:"b2b-services",s:38,out:"Screened, dropped",capex:"8-15k est.",why:"No Czech legal duty; no Czech price or competitor found; night labour and fire liability.",today:1},
-{d:"2026-10-28",o:2,slug:"eshop-returns-refurb-grading-b2b-cz",cat:"b2b-services",s:38,out:"Screened, dropped",capex:"15-35k est.",why:"Fee 2-5 EUR vs labour 1-1.7 EUR per item; Retino and 3PLs already cover returns.",today:1},
-{d:"2026-10-28",o:3,slug:"epal-pallet-repair-trading-prague",cat:"b2b-services",s:36,out:"Screened, dropped",capex:"25-50k est.",why:"Thin per-pallet margin needing labour; licensed repairers near Prague.",today:1},
-{d:"2026-10-28",o:4,slug:"ppwr-packaging-compliance-service-eshops-cz",cat:"b2b-services",s:33,out:"Screened, dropped",capex:"3-8k est.",why:"EKO-KOM guidance is free and a USD 29-99 app exists; Czech act unsettled.",today:1},
+{d:"2026-10-28",o:0,slug:"str-host-consumables-subscription-prague",cat:"ecommerce-import",s:43,out:"Screened, dropped",capex:"5-15k est.",why:"Makro HoReCa range is the price anchor; cleaning firms already bundle consumables; Prague STR rules may shrink the base.",today:1},
+{d:"2026-10-28",o:1,slug:"refurb-floor-scrubbers-cleaning-firms-cz",cat:"ecommerce-import",s:38,out:"Screened, dropped",capex:"15-30k est.",why:"Refurbished Hako B45 already 2,150-3,550 EUR from a PL refurbisher; Czech dealers hold stock and service.",today:1},
+{d:"2026-10-28",o:2,slug:"refurb-pro-coffee-machines-offices-cz",cat:"ecommerce-import",s:36,out:"Screened, dropped",capex:"8-20k est.",why:"Labour-heavy, low ticket; rental firms own the office segment.",today:1},
+{d:"2026-10-28",o:3,slug:"colour-matched-touchup-paint-by-code-cz",cat:"ecommerce-import",s:34,out:"Screened, dropped",capex:"8-20k est.",why:"Coded sprays already on Kaufland.cz and Zboží.cz; 12-35 EUR orders leave little after ads and shipping.",today:1},
+{d:"2026-10-28",o:4,slug:"de-liquidation-returns-lots-to-cz-resale",cat:"ecommerce-import",s:30,out:"Screened, dropped",capex:"10-30k est.",why:"No EU lot or CZ resale prices verified; WEEE and warranty exposure; labour per item.",today:1},
+{d:"2026-10-28",o:0,slug:"lease-return-prep-fleet-cz",cat:"b2b-services",s:40,out:"Screened, dropped",capex:"5-12k est.",why:"Lessors own the touchpoint (VWFS/DEKRA inspection 920 CZK); needs 100+ cars/yr from hard-to-reach fleets."},
+{d:"2026-10-28",o:1,slug:"kitchen-exhaust-duct-cleaning-gastro-prague",cat:"b2b-services",s:38,out:"Screened, dropped",capex:"8-15k est.",why:"No Czech legal duty; no Czech price or competitor found; night labour and fire liability."},
+{d:"2026-10-28",o:2,slug:"eshop-returns-refurb-grading-b2b-cz",cat:"b2b-services",s:38,out:"Screened, dropped",capex:"15-35k est.",why:"Fee 2-5 EUR vs labour 1-1.7 EUR per item; Retino and 3PLs already cover returns."},
+{d:"2026-10-28",o:3,slug:"epal-pallet-repair-trading-prague",cat:"b2b-services",s:36,out:"Screened, dropped",capex:"25-50k est.",why:"Thin per-pallet margin needing labour; licensed repairers near Prague."},
+{d:"2026-10-28",o:4,slug:"ppwr-packaging-compliance-service-eshops-cz",cat:"b2b-services",s:33,out:"Screened, dropped",capex:"3-8k est.",why:"EKO-KOM guidance is free and a USD 29-99 app exists; Czech act unsettled."},
 {d:"2026-10-27",o:5,slug:"honey-spoons-single-serve-cz",cat:"ecommerce-import",s:44,v:"(variant 51)",out:"Deep dive: Pass",capex:"12k (test 2-5k)",why:"Owner-supplied test idea; Pass."},
 {d:"2026-10-27",o:6,slug:"eshop-coi-compliance-scanner-cz",cat:"digital-saas",s:47,out:"Screened, dropped",capex:"8-15k est.",why:"GPSR/cookie apps at USD 0-13/mo cap price; scan finds presence, not legal correctness; Shoptet or law firms could bundle."},
 {d:"2026-10-27",o:7,slug:"nis2-lite-compliance-kit-cz",cat:"digital-saas",s:38,out:"Screened, dropped",capex:"5-12k est.",why:"Free NÚKIB manual and Advisera's full Czech kit; peak window ends about end 2026."},
