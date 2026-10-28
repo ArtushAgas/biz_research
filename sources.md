@@ -62,7 +62,17 @@ Grand View Research (pet daycare) | https://www.grandviewresearch.com/ | E | EU 
 Hacker News (Algolia API) | https://hn.algolia.com/api/v1/search | B | global | yes | Low | B-023, B-024 | - | generic Ask HN threads
 Chift white paper, DIHK, EIB | https://www.dihk.de/ | C | EU/DE | snippets | Low | C-030 | - | context only
 
+## Reachable via the owner's Chrome (browser harvest 2026-10-28, partial run)
+Heureka shop reviews | https://obchody.heureka.cz/alza-cz/recenze/ | A | CZ | yes via browser (cookie banner declined; /obchody/ index and guessed slugs 404; works for real shop slugs) | Low-Medium | A-034 | - | newest-first reviews skew positive; useful part is the 6-month negative-theme counts; needs sort-by-worst, not tried; 3 page views
+Amazon.de Hot New Releases / Best Sellers | https://www.amazon.de/gp/new-releases/kitchen/ | E | DE | yes via browser (department pages; Movers & Shakers pages were empty on both the index and Home & Kitchen) | Medium | E-032, E-033 | - | list renders as page text, ships-to-CZ prices in CZK; only 1 of ~20 departments read; 3 page views
+dTest articles | https://www.dtest.cz/clanky | A | CZ | yes via browser (cookie dialog declined; text only via accessibility tree) | Low | A-035 | - | free part is consumer advice headlines, little complaint data; 1 page view
+Google Trends Trending Now CZ | https://trends.google.com/trending?geo=CZ&hours=168 | E | CZ | yes via browser | Low | none | - | top 25 of 441 were news, sport, weather; no business signals; category filter not tried; 1 page view
+Emimino | https://www.emimino.cz/ | B | CZ | yes via browser (page loads) | not assessed | none | - | my search-URL guess 404'd and the on-site search did not submit; 1 page view, retry with a discussion-category URL
+Okoun | https://www.okoun.cz/boards/ | B | CZ | yes via browser (index loads) | not assessed | none | - | front page is a board index only; needs a specific board, general chatter likely low value; 1 page view
+
 ## Blocked or unusable (to retry or replace)
+Reddit via Claude in Chrome | https://www.reddit.com/ | B | global | refused by the extension's own safety restrictions ("This site is not allowed"), so not reachable through the browser route either | Low | none | - | not worked around; needs manual export or the old.reddit/API route if wanted
+Not attempted in the browser run (still unreachable by search tool): Mamaclub, Google Maps, Allegro bestsellers, NEN, Věstník veřejných zakázek, TED | n/a | B,A,E,C | CZ/PL/EU | untested | High if reachable | none | - | candidates for the next browser run
 Reddit (all subs), Emimino, Okoun, Mamaclub, Zive.cz discussions, Stack Exchange, DuckDuckGo HTML | n/a | B | CZ/global | blocked (403/404/tool refusal) | Low | none | - | no community signals from Reddit/Emimino this run; consider an alternative access route
 Heureka shop reviews, Google Maps reviews, dTest, nejremeslnici.cz | https://www.heureka.cz/obchody/ | A | CZ | blocked (403/consent/bot wall/429) | High if reachable | none | - | highest-value complaint sources; need another way in (manual export, API, or allowed domains)
 businessinfo.cz | https://www.businessinfo.cz/ | C | CZ | blocked (403 on fetch; snippets only) | Medium | C-002, C-003, C-004 | - | many survey articles known only from snippets
