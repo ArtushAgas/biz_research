@@ -26,3 +26,15 @@ Token use of subagents per pipeline run, as reported by each agent's completion 
 - Per screener about 29k-42k tokens; per deep-dive researcher 161k-204k; the judge about 63k.
 - The two runs together: about 1.29M subagent tokens, plus the orchestrator.
 - The earlier browser harvest and NEN research ran in the main session and are not itemised here.
+
+## 2026-10-28 owner research: warehouse-worker-supply-cz (Amazon and general staffing), 3 agents, no judge
+| Stage | Agents | Tokens | Tool uses |
+|---|---|---|---|
+| competition-analyst (market, Amazon, agencies, prices, public lens) | 1 | 166,051 | 113 |
+| supply-sourcing (wages, bill rates, unit economics, cash, workers) | 1 | 138,479 | 70 |
+| legal-czech (agency permit, structures, foreigners, VAT, penalties) | 1 | 229,468 | 112 |
+| **Total subagents** | 3 | **533,998** | **295** |
+Synthesis and scoring were done in the main session (no separate judge).
+
+## Running total for 2026-10-28 (subagents only)
+5-candidate screen 236,911 + 10-candidate screen with deep dive 1,054,197 + warehouse research 533,998 = **1,825,106 tokens**, 859 tool uses. Main-session tokens (orchestration, browsing, writing) are not visible and come on top.
