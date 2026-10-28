@@ -1,4 +1,5 @@
 # Source register
+Browser how-to (URL patterns, consent buttons, scan recipes, what failed): `.claude/skills/browser-harvest-playbook/SKILL.md`.
 Where opportunity signals come from and how useful each source has been. Updated by `/harvest`; the yield column is updated as screened ideas get scores.
 
 Line format:
@@ -7,6 +8,7 @@ Line format:
 First full harvest 2026-10-28 (5 groups). Best screen score so far is "-" until backlog ideas are screened.
 
 ## High usefulness (reachable, dated, quantified)
+NEN public procurement (priority source) | https://nen.nipez.cz/en/verejne-zakazky | C | CZ | yes via browser (English UI; keyword URL /en/verejne-zakazky/p:vz:query=<term>; 50 rows per page as text; values and CPV only on detail pages, not yet tried) | High | C-031, C-032, C-033, C-034 | - | run every browser harvest; ~2,800 hits for "úklid" alone; shows what the state buys repeatedly (buyer type, contract period, repeat buyers); recipe and keyword list in .claude/skills/browser-harvest-playbook/SKILL.md; 2 page views in run 4
 ČOI press releases (Q2 2026 e-shop, discount, counterfeit checks) | https://coi.gov.cz/pro-spotrebitele/tiskove-zpravy/ | A | CZ | yes (.docx) | High | A-005, A-006, A-007, A-024 | - | primary official data; ČOI selects shops it suspects, so rates are not market-wide
 muj-pravnik.cz | https://muj-pravnik.cz/kontroly-eshopu-coi-2q2026/ | A | CZ | yes | High | A-005, A-007 | - | detailed ČOI breakdowns
 Seznam Zprávy | https://www.seznamzpravy.cz/ | A | CZ | yes | High | A-001, A-002, A-004 | - | dated, quantified parcel-carrier pieces; many search hits old
@@ -67,7 +69,6 @@ Google Maps reviews | https://www.google.com/maps/search/výdejní+místo+Zásil
 Google Maps, movers and appliance repair (run 4) | https://www.google.com/maps/search/stěhování+Praha | A | CZ | yes via browser | Medium | A-039, A-040 | - | both categories are rated 4.2-5.0 with large volume: good for ruling ideas out; 2 page views
 Google Maps, car services (run 3) | https://www.google.com/maps/search/autoservis+Praha | A | CZ | yes via browser | Medium | A-019 note | - | 10 outlets rated 4.1-4.8; lowest-rated ones carry sponsored links (not clicked); reviews are old and per-outlet, so weak for a market-wide gap; 3 page views
 Heureka negative reviews | https://obchody.heureka.cz/alza-cz/recenze/negativni | A | CZ | yes via browser; the permission denial in run 3 was a page-still-loading error, a retry worked; "Negativní" filter URL is /<shop-slug>/recenze/negativni | High | A-038 | - | newest negative reviews with shop replies; need the correct shop slug; cookie banner not blocking text; 2 page views, more shops (Notino, Rohlik, Datart, Mall) untried
-NEN public procurement list | https://nen.nipez.cz/en/verejne-zakazky | C | CZ | yes via browser (list of 50 loads as text; quick-search by keyword works, URL pattern /verejne-zakazky/p:vz:query=<term>; values and CPV not shown, detail pages not tried) | High | C-031, C-032, C-033, C-034 | - | 5,683 list pages; next step is filtering by service CPV codes or buyer type; 1 page view
 Allegro.cz | https://allegro.cz/ | E | CZ/PL | loads via browser (consent declined); bestseller list not found: guessed category slug redirected to Music and page text returned one item | not assessed | none | - | needs real category URLs or the "Cenové hity" page; 2 page views
 Heureka shop reviews | https://obchody.heureka.cz/alza-cz/recenze/ | A | CZ | yes via browser (cookie banner declined; /obchody/ index and guessed slugs 404; works for real shop slugs) | Low-Medium | A-034 | - | newest-first reviews skew positive; useful part is the 6-month negative-theme counts; needs sort-by-worst, not tried; 3 page views
 Amazon.de Hot New Releases / Best Sellers | https://www.amazon.de/gp/new-releases/kitchen/ | E | DE | yes via browser (department pages; Movers & Shakers pages were empty on both the index and Home & Kitchen; Home & Kitchen and Pet Supplies read, ~18 departments left) | Medium | E-032, E-033, E-034, E-035 | - | list renders as page text, ships-to-CZ prices in CZK; only 1 of ~20 departments read; 3 page views
