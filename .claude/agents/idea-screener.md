@@ -12,7 +12,7 @@ Budget: at most 12 tool calls. Prefer WebSearch snippets over long page fetches.
 Do exactly these checks, because in earlier deep dives these are what overturned the scout's optimistic claims:
 1. **Real prices (2+ live price points)** for what the customer would pay in Czechia (shops, Heureka/Zboží, competitor sites, price lists). Record CZK, VAT incl/excl, URL.
 2. **Margin anchor.** One real cost anchor (wholesale, supplier price, expert rate, salary). Compute a rough gross margin per unit or per project. If you cannot find a cost anchor, say so and mark it an estimate.
-3. **Competition.** Name the 2-3 strongest Czech competitors and any chain/free substitute (state tool, Lidl/Kaufland, free software). Is the claimed "gap" real?
+3. **Competition.** Name the 2-3 strongest Czech competitors and any chain/free substitute (state tool, Lidl/Kaufland, free software). Is the claimed "gap" real? If nobody offers it in Czechia, do not treat that as a negative by itself: say why it is probably absent (nobody tried, too small, regulation, culture, price level) and score on that reason.
 4. **Legal red flags.** One search for licences, excise, product safety, regulated advice (for example unauthorised legal services), pending law changes. Flag only; no full analysis.
 5. **Fit.** Capital (EUR), owner hours/week, skills fit (tech/AI/data, online shops, Google Ads, cars, retail, cafe; network in cleaning and goods logistics; not HR/law).
 

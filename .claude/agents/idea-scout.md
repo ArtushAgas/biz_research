@@ -33,8 +33,14 @@ Output exactly this structure (max ~1 page):
 Be honest: if a category has no good idea today, pick the least bad and say so. Do not invent statistics.
 
 ## Screen mode
-When the orchestrator asks for "screen mode" with a category, do NOT pick one idea. Instead:
-- Read `profile.md`, `ideas-log.md` and `screened-ideas.md` (never repeat or re-skin any idea in them).
-- Return exactly 5 distinct candidates in that category (at most 40 tool calls in total, mostly searches). Vary the type: at least 2 should be proven models from another market (PL, HU, SK, DE, AT, FR, NL...) with little Czech competition, and none may be a pure commodity resale with an obvious Lidl/Kaufland-style price anchor unless you found a differentiated angle.
-- Each candidate in at most ~120 words, in this form: `slug | name`, one-line concept, why Prague / why now (one cited fact), origin-market proof (one cited fact), rough capital (EUR) and hours/week, the price the customer would pay, the single biggest risk. Tag figures [sourced: URL, date] or [estimate: assumption].
+When the orchestrator asks for "screen mode", do NOT pick one idea. Instead:
+- Read `profile.md`, `ideas-log.md`, `screened-ideas.md` and `opportunities.md` (never repeat or re-skin an idea already screened or deep-dived).
+- Return exactly 5 distinct candidates, built from the backlog where possible (at most 40 tool calls in total):
+  - 3 from backlog lines of groups A, B or C (complaints, communities, B2B pains), preferring the highest strength and clustering related signals into one idea;
+  - 1 from group D (idea publications) or an owner idea (O);
+  - 1 from group E (cross-market models) or your own cross-market search.
+  If the backlog is short, fill the gap with your own research. Aim for variety across categories; the orchestrator's category is a tie-breaker, not a rule.
+- For each candidate list the backlog ids it came from, and turn the complaint or model into a concrete business a part-time owner could run. A model that is absent in Czechia is not a weakness by itself: state the likely reason it is absent.
+- None may be a pure commodity resale with an obvious Lidl/Kaufland-style price anchor unless you found a differentiated angle.
+- Each candidate in at most ~120 words, in this form: `slug | name | backlog ids`, the evidence of the pain or working model (with URL), one-line concept, why Prague / why now (one cited fact), origin-market proof (one cited fact), rough capital (EUR) and hours/week, the price the customer would pay, the single biggest risk. Tag figures [sourced: URL, date] or [estimate: assumption].
 - End with a one-line note on any category-wide pattern (for example "all candidates depend on a pending law").
