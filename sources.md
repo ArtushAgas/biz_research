@@ -11,10 +11,10 @@ First full harvest 2026-10-28 (5 groups). Best screen score so far is "-" until 
 NEN public procurement (priority source) | https://nen.nipez.cz/en/verejne-zakazky | C | CZ | yes via browser (English UI; keyword URL /en/verejne-zakazky/p:vz:query=<term>; 50 rows per page as text; values and CPV only on detail pages, not yet tried) | High | C-031 to C-046 | Registr smluv https://smlouvy.gov.cz/smlouva/<id> reachable (contract page, attachments download; quick search unusable); documents and price lists read after owner-approved downloads (run 6: Drážní inspekce call PDFs, MPSV 500-page contract);  - | detail pages work, values come via VVZ search then TED (VVZ https://vvz.nipez.cz/vyhledat-formular and TED https://ted.europa.eu/ both reachable via browser, 4 page views each in run 5); run every browser harvest; ~2,800 hits for "úklid" alone; shows what the state buys repeatedly (buyer type, contract period, repeat buyers); recipe and keyword list in .claude/skills/browser-harvest-playbook/SKILL.md; 2 page views in run 4
 ČOI press releases (Q2 2026 e-shop, discount, counterfeit checks) | https://coi.gov.cz/pro-spotrebitele/tiskove-zpravy/ | A | CZ | yes (.docx) | High | A-005, A-006, A-007, A-024 | - | primary official data; ČOI selects shops it suspects, so rates are not market-wide
 muj-pravnik.cz | https://muj-pravnik.cz/kontroly-eshopu-coi-2q2026/ | A | CZ | yes | High | A-005, A-007 | - | detailed ČOI breakdowns
-Seznam Zprávy | https://www.seznamzpravy.cz/ | A | CZ | yes | High | A-001, A-002, A-004 | - | dated, quantified parcel-carrier pieces; many search hits old
+Seznam Zprávy | https://www.seznamzpravy.cz/ | A | CZ | yes | High | A-001, A-002, A-004 | 36 | dated, quantified parcel-carrier pieces; many search hits old
 iROZHLAS | https://www.irozhlas.cz/ | A | CZ | yes | High | A-015 | - | solar fallout April 2026
 vzbv Verbraucherreport | https://www.vzbv.de/verbraucherreport/2026/beschwerden | A | DE | yes | High | A-025, A-026 | - | best-quantified EU complaint source
-Consumentenbond | https://www.consumentenbond.nl/acties-claims/acties/pakketbezorging | A | NL | yes | High | A-029 | - | page truncated before survey results
+Consumentenbond | https://www.consumentenbond.nl/acties-claims/acties/pakketbezorging | A | NL | yes | High | A-029 | 36 | page truncated before survey results
 Modrý koník forum | https://www.modrykonik.cz/forum/ | B | CZ | yes | High | B-001 to B-012, B-016, B-020 | - | most productive community source; many threads older than 24 months, search works with domain filter
 Lupa.cz | https://www.lupa.cz/ | B,C,D | CZ | yes | High | C-001, D-015 | - | AMSP JMHZ survey coverage
 Echo24 | https://echo24.cz/ | C | CZ | yes | High | C-001 | - | full AMSP figures
@@ -23,19 +23,19 @@ e15.cz | https://www.e15.cz/byznys | C,D | CZ | yes | High | C-015, C-025, D-032
 Právní prostor | https://www.pravniprostor.cz/ | C | CZ | yes | High | C-008, C-017, C-023, C-024 | - | NIS2, SVJ, packaging, building-law practical pieces
 Portál Pohoda | https://portal.pohoda.cz/ | C | CZ/SK | yes | High | C-011 | - | e-invoicing status CZ vs SK
 Úřad práce / ČSÚ | https://up.gov.cz/ | C | CZ | yes | High | C-006 | - | primary labour statistics
-CzechCrunch (cc.cz) | https://cc.cz/ | D | CZ | yes | High | A-003, D-001, D-002, D-006 to D-011 | - | best CZ small-business models with figures
+CzechCrunch (cc.cz) | https://cc.cz/ | D | CZ | yes | High | A-003, D-001, D-002, D-006 to D-011 | 36 | best CZ small-business models with figures
 Podnikatel.cz | https://www.podnikatel.cz/ | D | CZ | yes (direct fetch; search tool does not surface it) | High | D-001, D-003 to D-005, D-013, D-014 | - | regulatory change and market shifts
-deutsche-startups.de | https://www.deutsche-startups.de/ | D | DE | yes | High | D-016 to D-019, D-020 | - | daily "5 neue Startups" gives usable seeds
+deutsche-startups.de | https://www.deutsche-startups.de/ | D | DE | yes | High | D-016 to D-019, D-020 | 52 | daily "5 neue Startups" gives usable seeds
 Franchiseportal.de | https://www.franchiseportal.de | E | DE | yes | High | E-011, E-013 | - | "Brandneu" list with minimum equity and part-time flags; advertiser figures
 Für-Gründer Franchisebörse | https://www.fuer-gruender.de/franchiseboerse/ | E | DE | yes | High | E-012, E-014, E-015 | - | concept pages with equity, fees, location counts; advertiser figures
 EnergoZrouti.cz / aRecenze.cz | https://www.arecenze.cz/ | E | CZ | yes | High | E-001, E-002 | - | balcony PV rules and price gaps
 Novinky.cz | https://www.novinky.cz/ | E | CZ | yes | High | E-007 | - | right-to-repair delay
 Nordkurier / OnVista | https://www.nordkurier.de/ | E | DE | yes | High | E-003 | - | fetched directly
-pedelec-elektro-fahrrad.de | https://pedelec-elektro-fahrrad.de/ | E | DE | yes | High | E-006 | - | bike-leasing market figures via search summary
+pedelec-elektro-fahrrad.de | https://pedelec-elektro-fahrrad.de/ | E | DE | yes | High | E-006 | 53 | bike-leasing market figures via search summary
 Verbraucherzentrale | https://www.verbraucherzentrale.de/ | E | DE | yes | High | E-018 | - | Pflegebox rules
 
 ## Medium usefulness
-Trustpilot (Zásilkovna, Alza, Vinted CZ, Kiwi.com, DPD DE) | https://www.trustpilot.com/review/zasilkovna.cz | A | CZ/EU | yes | Medium | A-001, A-008, A-012, A-014, A-031 | - | dated 1-2 star text; unclaimed profiles, unrepresentative samples; small CZ profiles (Foodora, Notino, Rohlik) Low
+Trustpilot (Zásilkovna, Alza, Vinted CZ, Kiwi.com, DPD DE) | https://www.trustpilot.com/review/zasilkovna.cz | A | CZ/EU | yes | Medium | A-001, A-008, A-012, A-014, A-031 | 36 | dated 1-2 star text; unclaimed profiles, unrepresentative samples; small CZ profiles (Foodora, Notino, Rohlik) Low
 Cebia press releases | https://www.cebia.cz/novinky/tiskove-zpravy/ | A,B | CZ | yes | Medium | A-019, B-018 | - | primary data but a commercial seller of the audits; 2023 import data may be dated
 ČTÚ / ERÚ via oenergetice.cz | https://ctu.gov.cz/node/560128 | A | CZ | yes | Medium | A-017, A-018 | - | annual totals without topic split; ERÚ article from Feb 2025
 ECC Czechia / ECC Netherlands | https://evropskyspotrebitel.gov.cz/ | A | CZ/NL | yes | Medium | A-020, A-030 | - | counts and case examples
@@ -48,7 +48,7 @@ SMO ČR EMOS/PMOS reports, NÚKIB | https://smocr.cz/ | C | CZ | yes | Medium | 
 Forvis Mazars CZ | https://www.forvismazars.com/cz/ | C | CZ | yes | Medium | C-010 | - | EET 2.0 summary
 Bezprawnik.pl | https://bezprawnik.pl/ | C | PL | yes | Medium | C-012 | - | KSeF issues
 EU-Startups | https://www.eu-startups.com/ | D | EU | homepage yes, articles 403 | Medium | D-021, D-022 | - | headlines usable, mostly venture-scale
-Hospodářské noviny | https://hn.cz/ | D | CZ | headlines only (paywall) | Medium | D-012, D-031 | - | logistics and labour pressure
+Hospodářské noviny | https://hn.cz/ | D | CZ | headlines only (paywall) | Medium | D-012, D-031 | 52 | logistics and labour pressure
 Y Combinator Requests for Startups | https://www.ycombinator.com/rfs | D | global | yes | Medium | D-023 | - | venture-scale, little for a part-time owner
 Starter Story | https://www.starterstory.com/ | D | global | partly | Medium | D-024 to D-026 | - | self-reported revenue; startup costs usually missing
 Czech franchise sources (ČAF, franchising.cz) | https://www.franchising.cz | E | CZ | yes | Medium | E-010, E-016 | - | counts and member lists
@@ -65,10 +65,10 @@ Hacker News (Algolia API) | https://hn.algolia.com/api/v1/search | B | global | 
 Chift white paper, DIHK, EIB | https://www.dihk.de/ | C | EU/DE | snippets | Low | C-030 | - | context only
 
 ## Reachable via the owner's Chrome (browser harvest 2026-10-28, partial run)
-Google Maps reviews | https://www.google.com/maps/search/výdejní+místo+Zásilkovna+Praha | A | CZ | yes via browser (no consent screen or bot check; reviews open in the place panel, text readable; reviews tab opened by click) | High | A-004 (raised to 4), A-036, A-037 | - | best source so far for independent confirmation; ratings per outlet are noisy, so read the 1-2 star outlet reviews; sponsored listings mixed in; 5 page views
+Google Maps reviews | https://www.google.com/maps/search/výdejní+místo+Zásilkovna+Praha | A | CZ | yes via browser (no consent screen or bot check; reviews open in the place panel, text readable; reviews tab opened by click) | High | A-004 (raised to 4), A-036, A-037 | 36 | best source so far for independent confirmation; ratings per outlet are noisy, so read the 1-2 star outlet reviews; sponsored listings mixed in; 5 page views
 Google Maps, movers and appliance repair (run 4) | https://www.google.com/maps/search/stěhování+Praha | A | CZ | yes via browser | Medium | A-039, A-040 | - | both categories are rated 4.2-5.0 with large volume: good for ruling ideas out; 2 page views
 Google Maps, car services (run 3) | https://www.google.com/maps/search/autoservis+Praha | A | CZ | yes via browser | Medium | A-019 note | - | 10 outlets rated 4.1-4.8; lowest-rated ones carry sponsored links (not clicked); reviews are old and per-outlet, so weak for a market-wide gap; 3 page views
-Heureka negative reviews | https://obchody.heureka.cz/alza-cz/recenze/negativni | A | CZ | yes via browser; the permission denial in run 3 was a page-still-loading error, a retry worked; "Negativní" filter URL is /<shop-slug>/recenze/negativni | High | A-038 | - | newest negative reviews with shop replies; need the correct shop slug; cookie banner not blocking text; 2 page views, more shops (Notino, Rohlik, Datart, Mall) untried
+Heureka negative reviews | https://obchody.heureka.cz/alza-cz/recenze/negativni | A | CZ | yes via browser; the permission denial in run 3 was a page-still-loading error, a retry worked; "Negativní" filter URL is /<shop-slug>/recenze/negativni | High | A-038 | 36 | newest negative reviews with shop replies; need the correct shop slug; cookie banner not blocking text; 2 page views, more shops (Notino, Rohlik, Datart, Mall) untried
 Allegro.cz | https://allegro.cz/ | E | CZ/PL | loads via browser (consent declined); bestseller list not found: guessed category slug redirected to Music and page text returned one item | not assessed | none | - | needs real category URLs or the "Cenové hity" page; 2 page views
 Heureka shop reviews | https://obchody.heureka.cz/alza-cz/recenze/ | A | CZ | yes via browser (cookie banner declined; /obchody/ index and guessed slugs 404; works for real shop slugs) | Low-Medium | A-034 | - | newest-first reviews skew positive; useful part is the 6-month negative-theme counts; needs sort-by-worst, not tried; 3 page views
 Amazon.de Hot New Releases / Best Sellers | https://www.amazon.de/gp/new-releases/kitchen/ | E | DE | yes via browser (department pages; Movers & Shakers pages were empty on both the index and Home & Kitchen; Home & Kitchen and Pet Supplies read, ~18 departments left) | Medium | E-032, E-033, E-034, E-035 | - | list renders as page text, ships-to-CZ prices in CZK; only 1 of ~20 departments read; 3 page views
