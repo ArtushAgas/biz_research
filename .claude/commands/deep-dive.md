@@ -7,7 +7,7 @@ Deep-dive one idea. Idea or brief: $ARGUMENTS
 
 The idea brief is the text above, or the candidate with that slug from today's screening. Get today's date.
 
-1. **Independent research, in parallel.** In a single message, invoke `competition-analyst`, `supply-sourcing` and `legal-czech`. Give each ONLY the full idea brief (legal-czech also reads `profile.md`). Do not pass any agent another agent's output. Include the screening findings (prices, margin anchor, flags) in the brief as "screen notes" so they are not rediscovered from scratch.
+1. **Independent research, in parallel.** In a single message, invoke `competition-analyst`, `supply-sourcing` and `legal-czech`. Give each ONLY the full idea brief (legal-czech also reads `profile.md`). Do not pass any agent another agent's output. Tell all four agents to apply the `public-contract-lens` skill (competition and legal cover it in depth; supply checks delivery at awarded prices; the judge scores it). If the Claude in Chrome tools are connected (local run), first run the NEN/VVZ/TED search yourself per `browser-harvest-playbook` and add the findings to the brief as "public-contract notes" with URLs and dates. Include the screening findings (prices, margin anchor, flags) in the brief as "screen notes" so they are not rediscovered from scratch.
 2. **Judge.** Invoke `venture-judge` with the brief and the full text of all three reports. It returns the scored decision report, plus a reshaped-variant score when material. Ask it to resolve disagreements between reports with primary sources.
 3. **Persist.**
    - Write `reports/<YYYY-MM-DD>-<slug>.md`.

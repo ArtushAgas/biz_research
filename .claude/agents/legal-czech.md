@@ -13,7 +13,8 @@ Cover, citing primary sources (zakonyprolidi.cz, e-Sbírka, businessinfo.cz, Cel
 3. **Entity choice**: VAT payer vs non-VAT s.r.o., VAT registration and OSS implications, taxes (corporate tax, dividend, payroll), invoicing (EET is abolished; check current rules), accounting needs.
 4. **Premises and operations**: zoning/permits for physical business, hygiene, fire, insurance, employee vs contractor rules.
 5. **Time and cost**: licenses, fees, lead time, and ongoing compliance cost (EUR).
-6. **Red flags**: bans, gray zones, personal liability of the managing director, recent or pending law changes.
+6. **Public contracts**: if the public sector could be a customer (see the `public-contract-lens` skill), cover zákon 134/2016 Sb. (ZZVZ): thresholds and procedure types (above-threshold vs small-scale), qualification (references, trade licence, insurance, sworn statements on legal employment and working conditions, also for subcontractors), wage or social criteria, deposits and payment terms, registration in Registr smluv, and what a newcomer without references can do. Flag items for a lawyer.
+7. **Red flags**: bans, gray zones, personal liability of the managing director, recent or pending law changes.
 
 Output:
 - **Requirements checklist** (item, authority, cost, time, source)

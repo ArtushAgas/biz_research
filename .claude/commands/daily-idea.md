@@ -10,7 +10,8 @@ Read `CLAUDE.md`, `profile.md`, `ideas-log.md`, `screened-ideas.md`, `opportunit
 
 ## Stage 1: screen (cheap, broad)
 1. Invoke `idea-scout` in **screen mode** with the category. It returns 5 candidate briefs built mostly from the opportunity backlog (3 from complaints/communities/B2B, 1 from publications or owner ideas, 1 cross-market), each with its backlog ids.
-2. In a single message invoke 5 `idea-screener` agents in parallel, one per candidate, each given ONLY its own candidate brief.
+   If the Claude in Chrome tools are connected (local run only), also skim NEN for what the state buys repeatedly (see `browser-harvest-playbook`) and pass any strong public-contract candidate to the scout. In cloud runs the browser is not available: screeners use web search and mark "NEN not verified" when they cannot read the portals.
+2. In a single message invoke 5 `idea-screener` agents in parallel, one per candidate, each given ONLY its own candidate brief. Every screener evaluates the public-contract channel (`public-contract-lens` skill); record each candidate's classification in the main-reason column of `screened-ideas.md`.
 3. Rank candidates by preliminary score. Append one line per candidate to `screened-ideas.md`: `date | slug | category | screen score | outcome | main reason`. Outcome is `deep-dive` for the winner if it goes on, otherwise `dropped`. Add the backlog ids to the main-reason column. In `opportunities.md`, set the used lines to `screened <score>` (or `deep-dived <score>` after Stage 2), and in `sources.md` update the best screen score for the sources those lines came from.
 
 ## Decision gate

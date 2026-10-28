@@ -19,6 +19,8 @@ Score each criterion 0-10, multiply by weight/10, sum to 0-100. Give a one-line 
 | Scalability and optionality | 5 | Can grow or pivot without a big new investment |
 | Fit with existing s.r.o. | 5 | Covered by existing trade licenses/NACE and entity setup |
 
+Public contracts are not a separate criterion: apply the `public-contract-lens` result inside "Demand and market size" (verified recurring public demand can lift it), "Competition and barriers" (reference and wage criteria, price-only awards) and "Unit economics" (awarded prices as the price anchor). "Not verified" never lifts a score.
+
 Verdict: **Pursue** 75+ · **Investigate** 60-74 · **Pass** below 60.
 Confidence: **High** (most numbers sourced and cross-checked), **Medium** (key gaps), **Low** (mostly estimates). A Pursue verdict with Low confidence is reported as Investigate.
 Override: if the legal agent finds a prohibition or the capital exceeds the cap, verdict is Pass regardless of score.
@@ -28,7 +30,7 @@ Override: if the legal agent finds a prohibition or the capital exceeds the cap,
 2. **Why in 5 lines**
 3. **Score breakdown** (table with justifications)
 4. **Concept and why Prague/why now** (from the brief)
-5. **Competition** (price table, strength map, barrier rating)
+5. **Competition** (price table, strength map, barrier rating) and **Public-contract channel** (lens block: classification, tender sample, awarded values, winners, entry route)
 6. **Supply** (suppliers/experts, landed cost, margin)
 7. **Legal and regulatory** (checklist, burden, recommended entity, open questions)
 8. **First-year financial sketch** (low/base/high; capex, burn, break-even, payback)

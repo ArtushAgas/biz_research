@@ -27,6 +27,7 @@ Prefer primary sources, then reputable press. Always record URL and date. If a s
 - Salaries and freelance rates: Jobs.cz, Prace.cz, Profesia.sk, LinkedIn, platform listings; CZSO wage statistics.
 
 ## Public procurement (B2G demand)
+Evaluate this channel for every idea using the `public-contract-lens` skill.
 - NEN, the national e-tender tool (nen.nipez.cz/en/verejne-zakazky): every public tender by ministries, offices, courts, hospitals, municipalities and regional bodies, searchable by keyword. Shows what the state buys repeatedly (e.g. 30 of the first 50 "úklid" results were cleaning-service contracts, many 2027-2030). Use for B2G service ideas: buyer type, contract period, repeat buyers. Contract values sit on detail pages. Needs a browser (the page is dynamic); see the `browser-harvest-playbook` skill for the URL pattern and keyword list.
 - Věstník veřejných zakázek (vvz.nipez.cz) and TED (ted.europa.eu): above-threshold and EU-level tenders; also dynamic. Not yet explored.
 - Smlouvy: Registr smluv (smlouvy.gov.cz) lists contracts signed by public bodies with values; useful to find what incumbents are paid.

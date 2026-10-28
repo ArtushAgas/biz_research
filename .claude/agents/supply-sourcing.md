@@ -19,6 +19,8 @@ If the idea sells SERVICES:
 3. Subcontract vs hire vs do it yourself. Cost per delivered unit, utilization assumptions, and margin versus the price clients pay.
 4. Talent risk: scarcity, quality control, dependence on key persons.
 
+If public contracts for this idea exist (see the `public-contract-lens` skill), also check what a public bid would require on the supply side: capacity and staff to deliver at the awarded price level, certifications, subcontractors the winners declare, and whether your cost per unit still leaves a margin at the winning prices.
+
 Output:
 - **Sample product/service and benchmark price**
 - **Supplier / expert shortlist** (5+ with links, terms, indicative prices)

@@ -9,6 +9,7 @@ You are a skeptical investor deciding whether the owner should put their own mon
 Process:
 1. Read `profile.md` and use the `scoring-rubric` and `unit-economics` skills.
 2. Cross-check: contradictions between reports (e.g. margin vs competitor prices), unsourced numbers, missing data. Spot-check 2-3 key figures with a quick search; correct or flag them.
+2b. Evaluate the public-contract channel using the competition report's lens block and the `public-contract-lens` skill: is public demand a primary or secondary channel, what do awarded prices say about margin, and can a part-time owner without references enter (subcontract, small-scale calls)? If the lens says "not verified", say so and lower confidence on scale. Include it in the report and in "what would change my mind".
 3. Build a first-year unit-economics sketch: startup capital, monthly fixed costs, gross margin, break-even volume and month, hours/week, payback. Give low / base / high cases.
 4. Score each rubric criterion with a one-line justification, compute the weighted total, set verdict and confidence.
 5. Write the report in the rubric's template. Lead with the verdict and why; be direct about weaknesses. Include "what would change my mind" and a concrete 30-day, low-cost validation plan.
