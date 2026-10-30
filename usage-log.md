@@ -38,3 +38,6 @@ Synthesis and scoring were done in the main session (no separate judge).
 
 ## Running total for 2026-10-28 (subagents only)
 5-candidate screen 236,911 + 10-candidate screen with deep dive 1,054,197 + warehouse research 533,998 = **1,825,106 tokens**, 859 tool uses. Main-session tokens (orchestration, browsing, writing) are not visible and come on top.
+
+## 2026-10-30 (local-physical screen, no deep dive)
+Scout 73,879 + screeners 30,032 + 25,644 + 26,870 + 26,610 + 30,694 = **213,729 subagent tokens**. Best screen 47 (self-service-dog-wash-prague), below gate 55; no weekly deep dive due.

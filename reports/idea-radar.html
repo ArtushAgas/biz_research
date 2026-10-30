@@ -29,21 +29,26 @@ a{color:var(--accent)}
 </style>
 <main>
 <h1>Idea Radar</h1>
-<p class="sub">Every Prague/Czechia idea researched so far. Updated 2026-10-29. Today's screen is highlighted.</p>
-<div class="stats"><span><b>6</b>deep-dived</span><span><b>34</b>screened (5 today)</span><span><b>0</b>Go verdicts</span></div>
+<p class="sub">Every Prague/Czechia idea researched so far. Updated 2026-10-30. Today's screen is highlighted.</p>
+<div class="stats"><span><b>6</b>deep-dived</span><span><b>39</b>screened (5 today)</span><span><b>0</b>Go verdicts</span></div>
 <div class="ctl" role="group" aria-label="Sort">
 <button data-s="date" aria-pressed="true">Newest</button><button data-s="score" aria-pressed="false">Score</button><button data-s="cat" aria-pressed="false">Category</button>
 </div>
 <div class="wrap"><table><thead><tr><th>Idea</th><th>Category</th><th>Score</th><th>Stage / outcome</th><th>Capex</th><th>Why</th></tr></thead><tbody id="rows"></tbody></table></div>
-<p class="note">Deep-dive score shows the reshaped or reduced variant in brackets. Screen scores are preliminary and use few sources; the gate for a deep dive is 55. Not legal or tax advice.</p>
+<p class="note">Deep-dive score shows the reshaped or reduced variant in brackets. Screen scores are preliminary and use few sources; the gate for a deep dive is 55. Not legal or tax advice. 2026-10-30: no candidate reached the gate, so no deep dive ran.</p>
 </main>
 <script>
 var R=[
-{d:"2026-10-29",o:0,slug:"public-print-broker-publications-cz",cat:"b2b-services",s:47,out:"Screened, dropped",capex:"5-15k est.",why:"Primary B2G channel but price-only awards; printers bid direct; jobs 50-140k CZK, est. margin 8-15%; no award data verified (NEN not read).",today:1},
-{d:"2026-10-29",o:1,slug:"svj-small-jobs-desk-prague",cat:"b2b-services",s:41,out:"Screened, dropped",capex:"3-8k est.",why:"Property managers bundle emergency service; thin per-job margin, no cost anchor; reactive dispatch breaks fixed hours; liability.",today:1},
-{d:"2026-10-29",o:2,slug:"czechoslovak-design-export-dach",cat:"ecommerce-import",s:40,out:"Screened, dropped",capex:"8-20k est.",why:"About 100 EUR net per piece needs ~10 pieces/mo of hands-on work; established CZ/SK dealers on 1stdibs; no Czech buy prices found.",today:1},
-{d:"2026-10-29",o:3,slug:"pet-gps-tracker-no-subscription-cz",cat:"ecommerce-import",s:34,out:"Screened, dropped",capex:"6-12k est.",why:"Net margin under 15% vs AirTag/Alza/Dogtrace; weak range promise; RED cybersecurity and WEEE producer duties.",today:1},
-{d:"2026-10-29",o:4,slug:"lowest-price-30d-label-cz",cat:"digital-saas",s:24,out:"Screened, dropped",capex:"3-8k est.",why:"Shoptet native field plus add-ons at 19-200 CZK/mo and free Woo plugin; gap already filled.",today:1},
+{d:"2026-10-30",o:-20,slug:"self-service-dog-wash-prague",cat:"local-physical",s:47,out:"Screened, dropped",capex:"15-35k est.",why:"No running-cost or CZ vendor quote; DE wash about EUR 8, DOG SPA staffed hour 399 CZK voucher; one unit likely 0-5k CZK/month, target needs 25-40 washes/day; drainage and landlord consent.",today:1},
+{d:"2026-10-30",o:-19,slug:"professional-svj-chair-service-prague",cat:"b2b-services",s:45,out:"Screened, dropped",capex:"2-5k est.",why:"ProfiPředseda and SBD Družba already sell it; unlimited personal statutory liability; not scalable part-time; no Prague price.",today:1},
+{d:"2026-10-30",o:-18,slug:"rental-turnover-cleaning-crew-prague",cat:"local-physical",s:44,out:"Screened, dropped",capex:"3-8k est.",why:"Freelancers set price at 150-400 CZK/h; Airbnb cleaners exist; about 100-150 CZK margin per turnover; Prague STR rules unresolved.",today:1},
+{d:"2026-10-30",o:-17,slug:"sick-day-sitter-network-prague",cat:"local-physical",s:44,out:"Screened, dropped",capex:"5-15k est.",why:"Take about 60-85 CZK/h after sitter pay; Hlídačky and agencies cover it; child-safety liability; B2B benefit angle unverified.",today:1},
+{d:"2026-10-30",o:-16,slug:"micro-site-smart-fridge-cz",cat:"local-physical",s:38,out:"Screened, dropped",capex:"20-45k est.",why:"Eat Smart and FreshPoint scaling; no CZ fridge or food cost; spoilage and chilled-meal hygiene rules.",today:1},
+{d:"2026-10-29",o:0,slug:"public-print-broker-publications-cz",cat:"b2b-services",s:47,out:"Screened, dropped",capex:"5-15k est.",why:"Primary B2G channel but price-only awards; printers bid direct; jobs 50-140k CZK, est. margin 8-15%; no award data verified (NEN not read)."},
+{d:"2026-10-29",o:1,slug:"svj-small-jobs-desk-prague",cat:"b2b-services",s:41,out:"Screened, dropped",capex:"3-8k est.",why:"Property managers bundle emergency service; thin per-job margin, no cost anchor; reactive dispatch breaks fixed hours; liability."},
+{d:"2026-10-29",o:2,slug:"czechoslovak-design-export-dach",cat:"ecommerce-import",s:40,out:"Screened, dropped",capex:"8-20k est.",why:"About 100 EUR net per piece needs ~10 pieces/mo of hands-on work; established CZ/SK dealers on 1stdibs; no Czech buy prices found."},
+{d:"2026-10-29",o:3,slug:"pet-gps-tracker-no-subscription-cz",cat:"ecommerce-import",s:34,out:"Screened, dropped",capex:"6-12k est.",why:"Net margin under 15% vs AirTag/Alza/Dogtrace; weak range promise; RED cybersecurity and WEEE producer duties."},
+{d:"2026-10-29",o:4,slug:"lowest-price-30d-label-cz",cat:"digital-saas",s:24,out:"Screened, dropped",capex:"3-8k est.",why:"Shoptet native field plus add-ons at 19-200 CZK/mo and free Woo plugin; gap already filled."},
 {d:"2026-10-28",o:-10,slug:"grounds-maintenance-public-landlords-prague",cat:"local-physical",s:56,v:"(reshaped 60)",out:"Deep dive: Pass",capex:"18k (peak cash 27-30k)",why:"Screen 57 included +3 from the public-contract lens with no award price. Works only on private sites at 1.8+ CZK/m2; public anchors (0.8-1.2 CZK/m2, price wars of -33% to -79%) lose money. Reshaped private-first variant is borderline; run a 30-day test before buying equipment.",link:"https://claude.ai/artifact/MwXJzEDSKTZU4GdagfqDJj"},
 {d:"2026-10-28",o:-9,slug:"independent-car-inspection-prague",cat:"trade-regulated",s:52,out:"Screened, dropped",capex:"3-6k est.",why:"Cebia CarAudit and Carvago already scaled; local checks 3,000-5,000 CZK; open-ended liability; capped by owner time. NEN: not applicable."},
 {d:"2026-10-28",o:-8,slug:"autoservis-booked-job-lead-engine-prague",cat:"b2b-services",s:51,out:"Screened, dropped",capex:"2-5k + ad float",why:"No Czech CPC or fee anchor, about break-even; GetFix (250 garages) and Anolla own the booking layer. NEN: not applicable."},
