@@ -29,21 +29,26 @@ a{color:var(--accent)}
 </style>
 <main>
 <h1>Idea Radar</h1>
-<p class="sub">Every Prague/Czechia idea researched so far. Updated 2026-10-30. Today's screen is highlighted.</p>
-<div class="stats"><span><b>6</b>deep-dived</span><span><b>39</b>screened (5 today)</span><span><b>0</b>Go verdicts</span></div>
+<p class="sub">Every Prague/Czechia idea researched so far. Updated 2026-10-31. Today's screen is highlighted.</p>
+<div class="stats"><span><b>6</b>deep-dived</span><span><b>44</b>screened (5 today)</span><span><b>0</b>Go verdicts</span></div>
 <div class="ctl" role="group" aria-label="Sort">
 <button data-s="date" aria-pressed="true">Newest</button><button data-s="score" aria-pressed="false">Score</button><button data-s="cat" aria-pressed="false">Category</button>
 </div>
 <div class="wrap"><table><thead><tr><th>Idea</th><th>Category</th><th>Score</th><th>Stage / outcome</th><th>Capex</th><th>Why</th></tr></thead><tbody id="rows"></tbody></table></div>
-<p class="note">Deep-dive score shows the reshaped or reduced variant in brackets. Screen scores are preliminary and use few sources; the gate for a deep dive is 55. Not legal or tax advice. 2026-10-30: no candidate reached the gate, so no deep dive ran.</p>
+<p class="note">Deep-dive score shows the reshaped or reduced variant in brackets. Screen scores are preliminary and use few sources; the gate for a deep dive is 55. Not legal or tax advice. 2026-10-31: best candidate scored 38 (gate 55), so no deep dive ran.</p>
 </main>
 <script>
 var R=[
-{d:"2026-10-30",o:-20,slug:"self-service-dog-wash-prague",cat:"local-physical",s:47,out:"Screened, dropped",capex:"15-35k est.",why:"No running-cost or CZ vendor quote; DE wash about EUR 8, DOG SPA staffed hour 399 CZK voucher; one unit likely 0-5k CZK/month, target needs 25-40 washes/day; drainage and landlord consent.",today:1},
-{d:"2026-10-30",o:-19,slug:"professional-svj-chair-service-prague",cat:"b2b-services",s:45,out:"Screened, dropped",capex:"2-5k est.",why:"ProfiPředseda and SBD Družba already sell it; unlimited personal statutory liability; not scalable part-time; no Prague price.",today:1},
-{d:"2026-10-30",o:-18,slug:"rental-turnover-cleaning-crew-prague",cat:"local-physical",s:44,out:"Screened, dropped",capex:"3-8k est.",why:"Freelancers set price at 150-400 CZK/h; Airbnb cleaners exist; about 100-150 CZK margin per turnover; Prague STR rules unresolved.",today:1},
-{d:"2026-10-30",o:-17,slug:"sick-day-sitter-network-prague",cat:"local-physical",s:44,out:"Screened, dropped",capex:"5-15k est.",why:"Take about 60-85 CZK/h after sitter pay; Hlídačky and agencies cover it; child-safety liability; B2B benefit angle unverified.",today:1},
-{d:"2026-10-30",o:-16,slug:"micro-site-smart-fridge-cz",cat:"local-physical",s:38,out:"Screened, dropped",capex:"20-45k est.",why:"Eat Smart and FreshPoint scaling; no CZ fridge or food cost; spoilage and chilled-meal hygiene rules.",today:1},
+{d:"2026-10-31",o:-30,slug:"foreign-worker-onboarding-admin-sme-cz",cat:"trade-regulated",s:38,out:"Screened, dropped",capex:"2-5k est.",why:"No agency price found; law firms and staffing agencies bundle it; new foreigners act likely tightens non-lawyer representation; owner lacks immigration skills. NEN: not applicable.",today:1},
+{d:"2026-10-31",o:-29,slug:"building-permit-portal-filing-assistant-cz",cat:"b2b-services",s:37,out:"Screened, dropped",capex:"2-4k est.",why:"Premise stale (portal launched 1 Jul 2024); authorised designers must file and bundle it; no market price for filing alone. NEN: not applicable.",today:1},
+{d:"2026-10-31",o:-28,slug:"robot-mower-install-seasonal-service-cz",cat:"local-physical",s:31,out:"Screened, dropped",capex:"5-10k est.",why:"No CZ price found; dealers bundle service and storage; wire-free mowers erode niche; needs 100-250 recurring customers, seasonal. NEN: not applicable.",today:1},
+{d:"2026-10-31",o:-27,slug:"peppol-onboarding-sk-exporters-cz",cat:"b2b-services",s:22,out:"Screened, dropped",capex:"3-8k est.",why:"SK mandate excludes foreign suppliers until about 2030; 9-39 EUR/month retail anchor, thin resale margin; vendors bundle. NEN: benchmark only.",today:1},
+{d:"2026-10-31",o:-26,slug:"google-ads-invalid-click-audit-cz",cat:"b2b-services",s:22,out:"Screened, dropped",capex:"1-3k est.",why:"Google auto-credits invalid clicks; pool gives 50-750 CZK/month per client on a success fee; no CZ price. NEN: not applicable.",today:1},
+{d:"2026-10-30",o:-20,slug:"self-service-dog-wash-prague",cat:"local-physical",s:47,out:"Screened, dropped",capex:"15-35k est.",why:"No running-cost or CZ vendor quote; DE wash about EUR 8, DOG SPA staffed hour 399 CZK voucher; one unit likely 0-5k CZK/month, target needs 25-40 washes/day; drainage and landlord consent."},
+{d:"2026-10-30",o:-19,slug:"professional-svj-chair-service-prague",cat:"b2b-services",s:45,out:"Screened, dropped",capex:"2-5k est.",why:"ProfiPředseda and SBD Družba already sell it; unlimited personal statutory liability; not scalable part-time; no Prague price."},
+{d:"2026-10-30",o:-18,slug:"rental-turnover-cleaning-crew-prague",cat:"local-physical",s:44,out:"Screened, dropped",capex:"3-8k est.",why:"Freelancers set price at 150-400 CZK/h; Airbnb cleaners exist; about 100-150 CZK margin per turnover; Prague STR rules unresolved."},
+{d:"2026-10-30",o:-17,slug:"sick-day-sitter-network-prague",cat:"local-physical",s:44,out:"Screened, dropped",capex:"5-15k est.",why:"Take about 60-85 CZK/h after sitter pay; Hlídačky and agencies cover it; child-safety liability; B2B benefit angle unverified."},
+{d:"2026-10-30",o:-16,slug:"micro-site-smart-fridge-cz",cat:"local-physical",s:38,out:"Screened, dropped",capex:"20-45k est.",why:"Eat Smart and FreshPoint scaling; no CZ fridge or food cost; spoilage and chilled-meal hygiene rules."},
 {d:"2026-10-29",o:0,slug:"public-print-broker-publications-cz",cat:"b2b-services",s:47,out:"Screened, dropped",capex:"5-15k est.",why:"Primary B2G channel but price-only awards; printers bid direct; jobs 50-140k CZK, est. margin 8-15%; no award data verified (NEN not read)."},
 {d:"2026-10-29",o:1,slug:"svj-small-jobs-desk-prague",cat:"b2b-services",s:41,out:"Screened, dropped",capex:"3-8k est.",why:"Property managers bundle emergency service; thin per-job margin, no cost anchor; reactive dispatch breaks fixed hours; liability."},
 {d:"2026-10-29",o:2,slug:"czechoslovak-design-export-dach",cat:"ecommerce-import",s:40,out:"Screened, dropped",capex:"8-20k est.",why:"About 100 EUR net per piece needs ~10 pieces/mo of hands-on work; established CZ/SK dealers on 1stdibs; no Czech buy prices found."},
