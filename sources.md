@@ -9,11 +9,11 @@ First full harvest 2026-10-28 (5 groups). Best screen score so far is "-" until 
 
 ## High usefulness (reachable, dated, quantified)
 NEN public procurement (priority source) | https://nen.nipez.cz/en/verejne-zakazky | C | CZ | yes via browser (English UI; keyword URL /en/verejne-zakazky/p:vz:query=<term>; 50 rows per page as text; values and CPV only on detail pages, not yet tried) | High | C-031 to C-046 | 57 | detail pages work, values come via VVZ search then TED (VVZ https://vvz.nipez.cz/vyhledat-formular and TED https://ted.europa.eu/ both reachable via browser, 4 page views each in run 5); run every browser harvest; ~2,800 hits for "úklid" alone; shows what the state buys repeatedly (buyer type, contract period, repeat buyers); recipe and keyword list in .claude/skills/browser-harvest-playbook/SKILL.md; 2 page views in run 4
-ČOI press releases (Q2 2026 e-shop, discount, counterfeit checks) | https://coi.gov.cz/pro-spotrebitele/tiskove-zpravy/ | A | CZ | yes (.docx) | High | A-005, A-006, A-007, A-024 | - | primary official data; ČOI selects shops it suspects, so rates are not market-wide
+ČOI press releases (Q2 2026 e-shop, discount, counterfeit checks) | https://coi.gov.cz/pro-spotrebitele/tiskove-zpravy/ | A | CZ | yes (.docx) | High | A-005, A-006, A-007, A-024 | 59  | primary official data; ČOI selects shops it suspects, so rates are not market-wide
 muj-pravnik.cz | https://muj-pravnik.cz/kontroly-eshopu-coi-2q2026/ | A | CZ | yes | High | A-005, A-007 | - | detailed ČOI breakdowns
 Seznam Zprávy | https://www.seznamzpravy.cz/ | A | CZ | yes | High | A-001, A-002, A-004 | 36 | dated, quantified parcel-carrier pieces; many search hits old
 iROZHLAS | https://www.irozhlas.cz/ | A | CZ | yes | High | A-015 | - | solar fallout April 2026
-vzbv Verbraucherreport | https://www.vzbv.de/verbraucherreport/2026/beschwerden | A | DE | yes | High | A-025, A-026 | - | best-quantified EU complaint source
+vzbv Verbraucherreport | https://www.vzbv.de/verbraucherreport/2026/beschwerden | A | DE | yes | High | A-025, A-026 | 59  | best-quantified EU complaint source
 Consumentenbond | https://www.consumentenbond.nl/acties-claims/acties/pakketbezorging | A | NL | yes | High | A-029 | 36 | page truncated before survey results
 Modrý koník forum | https://www.modrykonik.cz/forum/ | B | CZ | yes | High | B-001 to B-012, B-016, B-020 | - | most productive community source; many threads older than 24 months, search works with domain filter
 Lupa.cz | https://www.lupa.cz/ | B,C,D | CZ | yes | High | C-001, D-015 | - | AMSP JMHZ survey coverage

@@ -1,0 +1,96 @@
+<title>Lookalike Domain Takedown</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: single narrow reading column, verdict band on top, tables scroll inside their own wrappers */
+:root{--bg:#f6f7f9;--fg:#1b2430;--mute:#5d6b7c;--line:#d9dee5;--panel:#ffffff;--accent:#1f5f8b;--warn:#a65a00;--warnbg:#fbefdc;--bad:#a12b2b;--badbg:#f8e3e3;--ok:#1d6b45;--okbg:#e0f1e8;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161d;--fg:#e4e9ef;--mute:#9aa8b8;--line:#2b3644;--panel:#18202a;--accent:#6fb1de;--warn:#e8a34f;--warnbg:#3a2a13;--bad:#ef8a8a;--badbg:#3b1d1d;--ok:#7fd1a2;--okbg:#163226;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10161d;--fg:#e4e9ef;--mute:#9aa8b8;--line:#2b3644;--panel:#18202a;--accent:#6fb1de;--warn:#e8a34f;--warnbg:#3a2a13;--bad:#ef8a8a;--badbg:#3b1d1d;--ok:#7fd1a2;--okbg:#163226;color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.55;padding-block:24px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+h1{font-size:28px;line-height:1.2;margin:0;text-wrap:balance}h2{font-size:19px;margin:0 0 10px;text-wrap:balance}p,ul{margin:0}ul{padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+.verdict{background:var(--warnbg);border:1px solid var(--warn);border-radius:6px;padding:16px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline}
+.verdict .big{font-size:40px;font-weight:700;color:var(--warn);font-variant-numeric:tabular-nums}.verdict b{font-size:20px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--mute);font-size:13px}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:13.5px;font-variant-numeric:tabular-nums}th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute)}tr:last-child td{border-bottom:0}
+.pill{display:inline-block;padding:1px 8px;border-radius:99px;font-size:12px;border:1px solid var(--line)}.pill.bad{color:var(--bad);background:var(--badbg)}.pill.warn{color:var(--warn);background:var(--warnbg)}.pill.ok{color:var(--ok);background:var(--okbg)}
+.note{border-left:3px solid var(--accent);padding:4px 12px;color:var(--mute)}
+a{color:var(--accent);overflow-wrap:anywhere}code{font-family:var(--mono);font-size:12.5px}
+.bar{height:8px;background:var(--line);border-radius:4px;min-width:60px}.bar i{display:block;height:8px;background:var(--accent);border-radius:4px}
+</style>
+<main>
+<header><div class="eyebrow">Deep dive · digital-saas · 2026-11-01</div><h1>Lookalike-domain and fake-shop takedown for Czech e-shops</h1>
+<p style="color:var(--mute);margin-top:6px">Monitor lookalike domains of an e-shop, collect evidence, prepare takedown notices for registrar, host, Google and Meta. Search terms: falešné e-shopy, ochrana značky, monitoring doménových jmen.</p></header>
+<div class="verdict"><span class="big">55</span><b>Pass</b><span>Pilot-first variant ≈ 59, borderline Investigate. Confidence low to medium. Capex ≈ 6,500 EUR (4,000 to 10,000).</span></div>
+<div class="meta"><span>Screen score 59</span><span>Hours: 8 to 12 pitched, about 11 at 15 shops</span><span>Entity: VAT-payer s.r.o.</span></div>
+
+<section><h2>Why Pass, in five lines</h2><ul>
+<li>Clones are real and rising, but losses fall mostly on consumers and brand reputation. No source shows a small Czech shop paying for protection. Named victims (Sportisimo, Tescoma, Super Zoo) are large brands.</li>
+<li>The cheap tier is crowded: Recon free / $24, StoreLock $4.99, Thicket $49, Tramatm $20 to $105. The 990 to 2,500 CZK price sits at or above the top.</li>
+<li>"Near-zero cost" is half true. No .cz zone feed exists and .cz takedown needs a court or police order. Takedown labour is the real cost.</li>
+<li>Filing notices for a client for pay runs into the advocacy monopoly (Act 85/1996) and false-notice liability. Letting the client file its own is workable but less valuable.</li>
+<li>Base case: about 15 shops after 12 months gives about 235 EUR/month profit against the 1,000 EUR target [estimate].</li></ul></section>
+
+<section><h2>Score breakdown</h2><div class="tw"><table><tr><th>Criterion</th><th>Weight</th><th>Score</th><th>Points</th><th></th></tr>
+<tr><td>Demand and market size</td><td>20</td><td>4</td><td>8</td><td><div class="bar"><i style="width:40%"></i></div></td></tr>
+<tr><td>Unit economics</td><td>20</td><td>5</td><td>10</td><td><div class="bar"><i style="width:50%"></i></div></td></tr>
+<tr><td>Competition and barriers</td><td>15</td><td>5</td><td>7.5</td><td><div class="bar"><i style="width:50%"></i></div></td></tr>
+<tr><td>Capital</td><td>10</td><td>9</td><td>9</td><td><div class="bar"><i style="width:90%"></i></div></td></tr>
+<tr><td>Part-time feasibility</td><td>10</td><td>6</td><td>6</td><td><div class="bar"><i style="width:60%"></i></div></td></tr>
+<tr><td>Regulatory burden</td><td>10</td><td>4</td><td>4</td><td><div class="bar"><i style="width:40%"></i></div></td></tr>
+<tr><td>Supply availability</td><td>5</td><td>3</td><td>3</td><td><div class="bar"><i style="width:30%"></i></div></td></tr>
+<tr><td>Scalability and optionality</td><td>5</td><td>4</td><td>4</td><td><div class="bar"><i style="width:40%"></i></div></td></tr>
+<tr><td>Fit with s.r.o. (VAT only)</td><td>5</td><td>4</td><td>4</td><td><div class="bar"><i style="width:40%"></i></div></td></tr>
+<tr><td><b>Total</b></td><td>100</td><td></td><td><b>55.5</b></td><td></td></tr></table></div>
+<p class="note" style="margin-top:10px">Pilot-first variant (client files own notices, evidence pack, Black Friday sweep) scores about 59.5. It gains only from legal and hours fixes, not demand, so the verdict stays Pass.</p></section>
+
+<section><h2>Competition and prices</h2><div class="tw"><table><tr><th>Player</th><th>Price (excl. VAT unless noted)</th><th>Note</th></tr>
+<tr><td>Recon (Shopify)</td><td>$24/mo; free up to 10 lookalikes</td><td>English, Shopify-centred</td></tr>
+<tr><td>Thicket</td><td>$49/brand/mo; $99 with 4 takedowns/yr</td><td>English, US</td></tr>
+<tr><td>StoreLock</td><td>$4.99/mo</td><td>Price floor</td></tr>
+<tr><td>Tramatm (CZ/SK)</td><td>$20 and $105/mo; takedown $40; warning letter $50</td><td>Czech pages, USD. Page does not say it scans lookalike e-shops. Closest competitor or partner.</td></tr>
+<tr><td>Brandfence, Netcraft, MarkMonitor</td><td>$5,000 to 30,000/yr or quote only</td><td>Enterprise</td></tr>
+<tr><td>Arrows, KSANDK</td><td>Unknown</td><td>Law firms, bespoke</td></tr></table></div>
+<p style="margin-top:10px">Sources: <a href="https://www.tramatm.com/cs/pricing/brand-protection">tramatm.com</a>, <a href="https://slashdot.org/software/p/Thicket/">Thicket</a>, <a href="https://pickyourapp.com/products/recon-bot">Recon</a>, seen 2026-11-01. Market size: the brief said 38,000 e-shops; sources give about 50,000 (APEK/Heureka via lupa.cz, cc.cz), but the shops with ad spend and a brand worth cloning are a small unsourced subset.</p></section>
+
+<section><h2>Public-contract channel</h2><p><span class="pill warn">Benchmark only</span> The ČNB "Brand Protection" tender (<a href="https://ted.europa.eu/en/notice/300851-2026/pdf">TED 300851-2026</a>, published 2026-05-04, about 312,620 EUR excl. VAT per a search excerpt, not verified) proves the state buys the service, but scope is executives, credentials and dark web, which needs enterprise capability and references. Subcontract at best. NEN not verified, no score effect.</p></section>
+
+<section><h2>Supply and cost</h2><ul>
+<li>Free feeds: CertStream (uptime unconfirmed), crt.sh, RDAP at rdap.nic.cz, ICANN CZDS for gTLD zones. No .cz new-registration feed exists; CT logs miss fakes without TLS.</li>
+<li>White-label takedown partners (Netcraft, PhishFort, Takedown.co) publish no per-case price. Get quotes.</li>
+<li>Variable cost per client per month [estimate]: about 175 / 390 / 1,450 CZK (low / base / high). Driver is takedown labour at 300 CZK/h.</li></ul>
+<div class="tw" style="margin-top:10px"><table><tr><th>Gross margin</th><th>Low</th><th>Base</th><th>High cost</th></tr><tr><td>At 990 CZK</td><td>82%</td><td>61%</td><td><span class="pill bad">-46%</span></td></tr><tr><td>At 1,800 CZK</td><td>90%</td><td>78%</td><td>19%</td></tr><tr><td>At 2,500 CZK</td><td>93%</td><td>84%</td><td>42%</td></tr></table></div></section>
+
+<section><h2>Legal and regulatory</h2><p class="note">Research summary, not legal advice. Verify with a Czech lawyer and accountant.</p>
+<ul style="margin-top:10px"><li><span class="pill bad">High</span> Advocacy monopoly (85/1996 §1 to 2): paid, recurring drafting or sending of legal notices for a client is a grey zone. Redesign so the client files in its own accounts and legal-effect items go to a partner advokát.</li>
+<li><span class="pill warn">Medium-High</span> False notices: DSA Art. 16 and 23 (suspension of unfounded notifiers), unfair competition §2976 to 2978 OZ, personality rights §81 OZ, defamation §184 TZ if a "fake" label is wrong. Mitigate with client indemnity, human review, neutral wording.</li>
+<li><span class="pill warn">Medium</span> GDPR for WHOIS/RDAP data of natural persons (legitimate interest, Art. 14, Art. 10, records).</li>
+<li>Use the VAT-payer s.r.o.: 990 CZK gross is 818 net, 2,500 gross is 2,066 net. Consider a dedicated s.r.o. to ring-fence liability.</li>
+<li>Checklist: advocacy opinion 1,500 to 4,000 EUR, insurance 300 to 1,000 EUR/yr [estimates].</li></ul></section>
+
+<section><h2>First-year economics [estimate]</h2><div class="tw"><table><tr><th></th><th>Low</th><th>Base</th><th>High</th></tr>
+<tr><td>Price per shop per month</td><td>990 CZK</td><td>1,500 CZK</td><td>2,000 CZK</td></tr>
+<tr><td>Contribution per shop</td><td>290 CZK</td><td>1,110 CZK</td><td>1,610 CZK</td></tr>
+<tr><td>Shops at month 12</td><td>8</td><td>15</td><td>25</td></tr>
+<tr><td>Fixed cost per month</td><td>600 EUR</td><td>450 EUR</td><td>350 EUR</td></tr>
+<tr><td>One-off capex</td><td>4,000 EUR</td><td>6,500 EUR</td><td>10,000 EUR</td></tr>
+<tr><td>Profit per month at month 12</td><td>negative</td><td>about 235 EUR</td><td>about 1,300 EUR</td></tr>
+<tr><td>Payback</td><td>none</td><td>50+ months</td><td>9 to 12 months</td></tr>
+<tr><td>Hours per week</td><td>6 to 8</td><td>about 11</td><td>14 to 16</td></tr></table></div>
+<p style="margin-top:10px">Cash need about 12 to 13 EUR thousand in every case, far under the 100,000 EUR cap. Most sensitive: shops reached and price, then cases per shop, then acquisition cost (assumed 250 EUR per paying shop).</p></section>
+
+<section><h2>Top risks</h2><ul><li>No proven willingness to pay among small shops.</li><li>Legal exposure for notice filing.</li><li>.cz takedown needs a court or police order; fakes sit on disposable foreign hosting.</li><li>Churn in quiet months with no clone.</li><li>Tramatm or a law firm adds automated e-shop monitoring.</li></ul></section>
+
+<section><h2>30-day validation plan (under 300 EUR)</h2><div class="tw"><table><tr><th>Days</th><th>Action</th></tr>
+<tr><td>1 to 3</td><td>Email Tramatm (do you scan lookalike domains?) and CZ.NIC (bulk or new-registration data). Search NEN/VVZ for "ochrana značky", "monitoring internetu", "phishing".</td></tr>
+<tr><td>1 to 7</td><td>Build a minimal scanner: crt.sh, typosquat generator, DNS/RDAP checks. Scan 100 mid-size shops.</td></tr>
+<tr><td>5 to 10</td><td>Send each a free one-page "lookalikes found" report. File nothing; neutral wording.</td></tr>
+<tr><td>8 to 25</td><td>Offer a Black Friday sweep (Black Friday is 27 Nov): pre-sweep report, evidence pack with notice texts for the shop to file, post-weekend re-scan. Test 2,900 and 4,900 CZK. Aim for 30 to 50 conversations and at least 5 paid.</td></tr>
+<tr><td>10 to 25</td><td>Talk to 2 advokáts. Commission an opinion only if 3 shops agreed to pay.</td></tr>
+<tr><td>30</td><td>5 or more paid and under 2 h per shop: build and re-score. 1 to 4 paid: seasonal product only. None: drop.</td></tr></table></div></section>
+
+<section><h2>Would change the verdict</h2><ul><li>At least 5 shops pay 1,500+ CZK/month or 4,900+ CZK one-off, without discount.</li><li>Tramatm confirms it does not scan lookalikes and will refer or white-label.</li><li>An advokát confirms the evidence-pack model is outside the monopoly.</li><li>A white-label partner quotes under about 300 CZK per case.</li><li>NEN/VVZ shows recurring small brand-monitoring calls.</li></ul></section>
+
+<section><h2>Data gaps</h2><p>Small-shop willingness to pay; takedown success rates and timings; clone frequency per shop; white-label prices; whether Tramatm scans lookalikes; ČNB tender value and winner; NEN demand; CertStream reliability; CZ.NIC bulk-data policy; DSA text (secondary sources only); corporate and dividend tax. Report file: <code>reports/2026-11-01-eshop-lookalike-domain-takedown-cz.md</code>.</p></section>
+</main>
