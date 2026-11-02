@@ -37,7 +37,7 @@ Verbraucherzentrale | https://www.verbraucherzentrale.de/ | E | DE | yes | High 
 ## Medium usefulness
 Trustpilot (Zásilkovna, Alza, Vinted CZ, Kiwi.com, DPD DE) | https://www.trustpilot.com/review/zasilkovna.cz | A | CZ/EU | yes | Medium | A-001, A-008, A-012, A-014, A-031 | 36 | dated 1-2 star text; unclaimed profiles, unrepresentative samples; small CZ profiles (Foodora, Notino, Rohlik) Low
 Cebia press releases | https://www.cebia.cz/novinky/tiskove-zpravy/ | A,B | CZ | yes | Medium | A-019, B-018 | - | primary data but a commercial seller of the audits; 2023 import data may be dated
-ČTÚ / ERÚ via oenergetice.cz | https://ctu.gov.cz/node/560128 | A | CZ | yes | Medium | A-017, A-018 | - | annual totals without topic split; ERÚ article from Feb 2025
+ČTÚ / ERÚ via oenergetice.cz | https://ctu.gov.cz/node/560128 | A | CZ | yes | Medium | A-017, A-018 | 49 | annual totals without topic split; ERÚ article from Feb 2025
 ECC Czechia / ECC Netherlands | https://evropskyspotrebitel.gov.cz/ | A | CZ/NL | yes | Medium | A-020, A-030 | - | counts and case examples
 EU Consumer Scoreboard | https://transition-pathways.europa.eu/policy/2025-consumer-conditions-scoreboard | A | EU | search summary only | Medium | A-028 | - | figures not checked at primary source
 Expats.cz | https://www.expats.cz/ | A,B | CZ | yes (articles; forum 404) | Medium | A-021, B-022 | - | tenant disputes
