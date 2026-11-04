@@ -41,3 +41,6 @@ Synthesis and scoring were done in the main session (no separate judge).
 
 ## 2026-10-30 (local-physical screen, no deep dive)
 Scout 73,879 + screeners 30,032 + 25,644 + 26,870 + 26,610 + 30,694 = **213,729 subagent tokens**. Best screen 47 (self-service-dog-wash-prague), below gate 55; no weekly deep dive due.
+
+## 2026-11-04 (local-physical screen, no deep dive)
+Scout 79,919 + screeners 27,131 + 25,379 + 24,983 + 28,030 + 25,960 = **211,402 subagent tokens**. Best screen 38 (damp-wall-remediation-service-prague), below gate 55; no weekly deep dive due (last 2026-11-01).
