@@ -44,3 +44,6 @@ Scout 73,879 + screeners 30,032 + 25,644 + 26,870 + 26,610 + 30,694 = **213,729 
 
 ## 2026-11-04 (local-physical screen, no deep dive)
 Scout 79,919 + screeners 27,131 + 25,379 + 24,983 + 28,030 + 25,960 = **211,402 subagent tokens**. Best screen 38 (damp-wall-remediation-service-prague), below gate 55; no weekly deep dive due (last 2026-11-01).
+
+## 2026-11-05 (trade-regulated screen, no deep dive)
+Scout 77,791 + screeners 24,714 + 24,564 + 25,491 + 24,926 + 23,549 = **201,035 subagent tokens**. Best screen 42 (de-oem-czech-subcontractor-sourcing-desk), below gate 55; no weekly deep dive due (last 2026-11-01).
