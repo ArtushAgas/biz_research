@@ -15,11 +15,11 @@ Seznam Zprávy | https://www.seznamzpravy.cz/ | A | CZ | yes | High | A-001, A-0
 iROZHLAS | https://www.irozhlas.cz/ | A | CZ | yes | High | A-015 | - | solar fallout April 2026
 vzbv Verbraucherreport | https://www.vzbv.de/verbraucherreport/2026/beschwerden | A | DE | yes | High | A-025, A-026 | 59  | best-quantified EU complaint source
 Consumentenbond | https://www.consumentenbond.nl/acties-claims/acties/pakketbezorging | A | NL | yes | High | A-029 | 36 | page truncated before survey results
-Modrý koník forum | https://www.modrykonik.cz/forum/ | B | CZ | yes | High | B-001 to B-012, B-016, B-020 | - | most productive community source; many threads older than 24 months, search works with domain filter
+Modrý koník forum | https://www.modrykonik.cz/forum/ | B | CZ | yes | High | B-001 to B-012, B-016, B-020 | 41 (B-011 screens 41, 27) | most productive community source; many threads older than 24 months, search works with domain filter
 Lupa.cz | https://www.lupa.cz/ | B,C,D | CZ | yes | High | C-001, D-015 | - | AMSP JMHZ survey coverage
 Echo24 | https://echo24.cz/ | C | CZ | yes | High | C-001 | - | full AMSP figures
 AMSP | https://www.amsp.cz/ | C | CZ | yes | High | C-001, C-003 | - | primary SME survey source; PDFs often unreadable
-e15.cz | https://www.e15.cz/byznys | C,D | CZ | yes | High | C-015, C-025, D-032 | - | succession and ESG analyses
+e15.cz | https://www.e15.cz/byznys | C,D | CZ | yes | High | C-015, C-025, D-032 | 45 (C-015 buy-small-cleaning-firm 45; succession matchmaker 41) | succession and ESG analyses
 Právní prostor | https://www.pravniprostor.cz/ | C | CZ | yes | High | C-008, C-017, C-023, C-024 | - | NIS2, SVJ, packaging, building-law practical pieces
 Portál Pohoda | https://portal.pohoda.cz/ | C | CZ/SK | yes | High | C-011 | - | e-invoicing status CZ vs SK
 Úřad práce / ČSÚ | https://up.gov.cz/ | C | CZ | yes | High | C-006 | - | primary labour statistics
