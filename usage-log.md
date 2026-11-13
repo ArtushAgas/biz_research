@@ -53,3 +53,6 @@ Scout 104,195 + screeners 22,535 + 24,334 + 24,406 + 25,396 + 26,534 = **227,400
 
 ## 2026-11-09 (local-physical screen, no deep dive)
 Scout 88,920 + screeners 27,244 + 23,223 + 25,955 + 21,609 + 24,383 = **211,334 subagent tokens**. Best screen 50 (winter-service-snow-clearing-svj-prague), below gate 55; no weekly deep dive due (last 2026-11-08). Note: new backlog is thin; a /harvest is due.
+
+## 2026-11-13 (ecommerce-import screen, no deep dive)
+Scout 166,463 + screeners 28,761 + 28,403 + 26,392 + 26,371 + 29,333 = **305,723 subagent tokens**. Best screen 50 (compost-bin-tender-distributor-cz), below gate 55; no weekly deep dive due (last 2026-11-08). Note: new A/B/C backlog is exhausted of strong lines; a /harvest is due.
