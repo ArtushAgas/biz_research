@@ -88,3 +88,9 @@ Prace.cz, StartupJobs, NEN/Věstník, TED, Eurostat SME data | https://nen.nipez
 Sifted, Indie Hackers, TrendHunter, Gründerszene, CB Insights, BigIdeasDB | https://sifted.eu/ | D | EU/global | blocked/paywalled | Low | none | - | 403/429/paywall
 Amazon.de Movers & Shakers, Allegro bestsellers, Kickstarter live lists, Google Trends | https://www.amazon.de/gp/movers-and-shakers/ | E | DE/PL/global | blocked (503/403/JS) | High if reachable | none | - | product-demand sources worth recovering
 Franchise Direct, Franchise UK | https://www.franchisedirect.com/ | E | UK/US | blocked (404/403) | Low | none | - | only UK van-franchise article reached via search
+
+## Yield update 2026-11-14 (local-physical screens)
+MF public lease competitions (mf.gov.cz soutěžní podmínky) | https://mf.gov.cz/assets/attachments/2026-10-15_Soutezni-podminky.pdf | C | CZ | yes (PDF) | Medium | C-050 | 46 | state property leases (Act 219/2000), sporadic, blind rent bid
+hlidacstatu.cz contract detail pages | https://www.hlidacstatu.cz/Detail/5453615 | C | CZ | yes | Medium | C-049 | 38 | gives contract value but often no unit count
+Startbase / German startup news (StrollMe) | https://www.startbase.de/ | D | DE | yes | Low-Medium | D-036 | 50 | funding signal only, Czech price anchors still needed
+Swapfiets price pages | https://swapfiets.nl/ | E | NL | yes | Low | E-036 | 38 | model proven abroad, thin margin after theft/repair
