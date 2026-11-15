@@ -94,3 +94,10 @@ MF public lease competitions (mf.gov.cz soutěžní podmínky) | https://mf.gov.
 hlidacstatu.cz contract detail pages | https://www.hlidacstatu.cz/Detail/5453615 | C | CZ | yes | Medium | C-049 | 38 | gives contract value but often no unit count
 Startbase / German startup news (StrollMe) | https://www.startbase.de/ | D | DE | yes | Low-Medium | D-036 | 50 | funding signal only, Czech price anchors still needed
 Swapfiets price pages | https://swapfiets.nl/ | E | NL | yes | Low | E-036 | 38 | model proven abroad, thin margin after theft/repair
+
+## Yield update 2026-11-15 (trade-regulated screens)
+cez.cz PV service page + press release | https://www.cez.cz/cs/sluzby/servis-a-revize-fotovoltaiky | A | CZ | yes | High | A-015 | 41 | utility service prices (7,260 CZK one-off; 399-499/month) cap the orphan niche
+autohled.cz import page | https://www.autohled.cz/import/nemecko | B | CZ | yes | Medium | B-018 | 36 | DE import saving and cost anchors
+aedshop.cz / Heureka zdravotni-technika | https://www.aedshop.cz/ | A | CZ | yes | Medium | none | 38 | AED street prices
+balikovna.cz apartment box page | https://www.balikovna.cz/en/domovni-box/pro-bytovy-dum | A | CZ | yes | Medium | A-004 | 24 | block box price anchor
+firmy.cz rentals / hornbach.cz trailers | https://www.firmy.cz/ | A | CZ | yes | Low | none | 36 | trailer rental and purchase anchors
