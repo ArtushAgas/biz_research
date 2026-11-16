@@ -101,3 +101,10 @@ autohled.cz import page | https://www.autohled.cz/import/nemecko | B | CZ | yes 
 aedshop.cz / Heureka zdravotni-technika | https://www.aedshop.cz/ | A | CZ | yes | Medium | none | 38 | AED street prices
 balikovna.cz apartment box page | https://www.balikovna.cz/en/domovni-box/pro-bytovy-dum | A | CZ | yes | Medium | A-004 | 24 | block box price anchor
 firmy.cz rentals / hornbach.cz trailers | https://www.firmy.cz/ | A | CZ | yes | Low | none | 36 | trailer rental and purchase anchors
+
+## Yield update 2026-11-16 (digital-saas screens)
+idoklad.cz / mojedatovaschranka.cz notification pages | https://www.idoklad.cz/blog/vse-co-potrebujete-vedet-o-povinnem-pouzivani-datove-schranky | C | CZ | yes | Medium | C-002 | 40 | free e-mail and 3 CZK SMS anchors
+doxmenu.com Czech QR menu page | https://www.doxmenu.com/qr-menu/czech-republic/ | B | CZ | yes | High | B-008 | 38 | live CZ price 12.99-14.99 EUR/month
+landager.com pricing | https://landager.com/cs/pricing | A | CZ/global | yes | Medium | A-021 | 38 | USD 0/10/29 tiers
+epravo.cz / forvismazars.com švarcsystém pages | https://www.epravo.cz/ | D | CZ | yes | Medium | D-013 | 38 | seminar 3,975 CZK; bill status 2027
+finance.cz Dodomo article | https://www.finance.cz/clanky/527074-vratna-kauce-jistota-dodomo/ | E | CZ | yes | Low | A-021 | 27 | 2019 price only
