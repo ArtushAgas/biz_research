@@ -59,3 +59,6 @@ Scout 166,463 + screeners 28,761 + 28,403 + 26,392 + 26,371 + 29,333 = **305,723
 
 ## 2026-11-16 (digital-saas screen, no deep dive)
 Scout 110,725 + screeners 23,225 + 26,978 + 26,451 + 28,001 + 22,449 = **237,829 subagent tokens**. Best screen 40 (datova-schranka-inbox-guard-smb-cz), below gate 55; no weekly deep dive due (last 2026-11-15). Note: backlog nearly exhausted of unscreened A/B/C lines; a /harvest is overdue.
+
+## 2026-11-17 (b2b-services screen, no deep dive)
+Scout 144,586 + screeners 22,030 + 25,909 + 25,723 + 25,127 + 27,576 = **270,951 subagent tokens**. Best screen 46 (local-trades-google-ads-vertical-agency-prague), below gate 55; no weekly deep dive due (last 2026-11-15). Backlog A/B/C is exhausted of unscreened strength 3+ lines; a /harvest is overdue.
