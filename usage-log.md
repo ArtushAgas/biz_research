@@ -62,3 +62,6 @@ Scout 110,725 + screeners 23,225 + 26,978 + 26,451 + 28,001 + 22,449 = **237,829
 
 ## 2026-11-17 (b2b-services screen, no deep dive)
 Scout 144,586 + screeners 22,030 + 25,909 + 25,723 + 25,127 + 27,576 = **270,951 subagent tokens**. Best screen 46 (local-trades-google-ads-vertical-agency-prague), below gate 55; no weekly deep dive due (last 2026-11-15). Backlog A/B/C is exhausted of unscreened strength 3+ lines; a /harvest is overdue.
+
+## 2026-11-18 (ecommerce-import screen + deep dive)
+Best screen 56 (kitchen-small-appliance-spare-parts-cz) cleared gate 55; deep dive final 48 Pass (variant 52.5). Subagent token counts: scout 123,009; screeners 26,446 + 24,859 + 30,365 + 21,872 + 26,478; competition 63,455; supply 41,640; legal 152,337; judge 47,082. Backlog A/B/C/D mostly exhausted; /harvest is due.
