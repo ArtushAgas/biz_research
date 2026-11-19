@@ -108,3 +108,6 @@ doxmenu.com Czech QR menu page | https://www.doxmenu.com/qr-menu/czech-republic/
 landager.com pricing | https://landager.com/cs/pricing | A | CZ/global | yes | Medium | A-021 | 38 | USD 0/10/29 tiers
 epravo.cz / forvismazars.com švarcsystém pages | https://www.epravo.cz/ | D | CZ | yes | Medium | D-013 | 38 | seminar 3,975 CZK; bill status 2027
 finance.cz Dodomo article | https://www.finance.cz/clanky/527074-vratna-kauce-jistota-dodomo/ | E | CZ | yes | Low | A-021 | 27 | 2019 price only
+
+## 2026-11-19 (local-physical screen)
+Best screen 47 (bin-washing-svj-restaurants-prague) below gate 55, no deep dive. Search-only run (no NEN browser, two fetches 403/429). Useful: expats.cz/bezrealitky commercial rents (rent anchors), slevomat/firmy.cz tyre prices, smlouvy.gov.cz/TED for B2G. Weak: Czech per-service price anchors for bin washing and DDD subscriptions not findable via search.
