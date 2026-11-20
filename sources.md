@@ -111,3 +111,6 @@ finance.cz Dodomo article | https://www.finance.cz/clanky/527074-vratna-kauce-ji
 
 ## 2026-11-19 (local-physical screen)
 Best screen 47 (bin-washing-svj-restaurants-prague) below gate 55, no deep dive. Search-only run (no NEN browser, two fetches 403/429). Useful: expats.cz/bezrealitky commercial rents (rent anchors), slevomat/firmy.cz tyre prices, smlouvy.gov.cz/TED for B2G. Weak: Czech per-service price anchors for bin washing and DDD subscriptions not findable via search.
+
+## 2026-11-20 (trade-regulated screen)
+Best screen 42 (dog-gut-supplement-private-label-cz) below gate 55, no deep dive (last 2026-11-18). Search-only run, NEN not reachable; A/B/C backlog nearly exhausted (only A-032, A-033, B-015, C-025 open), so a /harvest is due. Useful: nejremeslnici.cz references (radon price), vzp.cz ePoukaz caps, mediaguru.cz non-alc spirits, TED notice pages. Dead end: A-033 lost-parcel shops (King Colis etc. already sell unclaimed lots).
