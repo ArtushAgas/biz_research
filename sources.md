@@ -114,3 +114,6 @@ Best screen 47 (bin-washing-svj-restaurants-prague) below gate 55, no deep dive.
 
 ## 2026-11-20 (trade-regulated screen)
 Best screen 42 (dog-gut-supplement-private-label-cz) below gate 55, no deep dive (last 2026-11-18). Search-only run, NEN not reachable; A/B/C backlog nearly exhausted (only A-032, A-033, B-015, C-025 open), so a /harvest is due. Useful: nejremeslnici.cz references (radon price), vzp.cz ePoukaz caps, mediaguru.cz non-alc spirits, TED notice pages. Dead end: A-033 lost-parcel shops (King Colis etc. already sell unclaimed lots).
+
+## 2026-11-21 (digital-saas screen)
+Best screen 55 (gastro-premises-takeover-broker-prague, E-037 Franchiseportal) deep-dived, final 52.5 Pass. Useful: Lupa (PPWR), Seznam Zpravy (PV sharing), expats.cz commercial listings (odstupne figures), zakonyprolidi.cz (39/2020). Search-only run, NEN not reachable. A/B/C backlog exhausted: a /harvest is overdue.
