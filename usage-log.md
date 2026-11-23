@@ -68,3 +68,6 @@ Best screen 56 (kitchen-small-appliance-spare-parts-cz) cleared gate 55; deep di
 
 ## 2026-11-22 (b2b-services screen, no deep dive)
 Best screen 44 (office-plant-rental-care-small-offices-prague) below gate 55; deep dive done 2026-11-21 so weekly rule not due. Scout 132,108 tokens; screeners 23,726 + 27,255 + 25,423 + 25,114 + 22,729. Backlog A/B/C nearly exhausted; /harvest is due.
+
+## 2026-11-23 (ecommerce-import screen, no deep dive)
+Best screen 45 (multilingual-bozp-induction-foreign-workers-cz) below gate 55; deep dive done 2026-11-21 so weekly rule not due. Backlog nearly exhausted (only 2 of 5 candidates from live backlog lines): /harvest overdue.
