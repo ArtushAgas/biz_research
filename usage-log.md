@@ -71,3 +71,6 @@ Best screen 44 (office-plant-rental-care-small-offices-prague) below gate 55; de
 
 ## 2026-11-23 (ecommerce-import screen, no deep dive)
 Best screen 45 (multilingual-bozp-induction-foreign-workers-cz) below gate 55; deep dive done 2026-11-21 so weekly rule not due. Backlog nearly exhausted (only 2 of 5 candidates from live backlog lines): /harvest overdue.
+
+## 2026-11-24 (local-physical screen, no deep dive)
+Best screen 48 (str-linen-partner-laundry-subscription-prague) below gate 55; deep dive done 2026-11-21 so weekly rule not due. 4 of 5 candidates fresh-sourced (backlog A/B/C exhausted, only weak A-007/A-032/A-033/C-025 new): /harvest overdue. NEN not readable via search in cloud; public-contract marked not verified. Scout ~129k tokens; screeners 22.9k + 24.0k + 24.8k + 23.5k + 28.4k.

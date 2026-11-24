@@ -117,3 +117,6 @@ Best screen 42 (dog-gut-supplement-private-label-cz) below gate 55, no deep dive
 
 ## 2026-11-21 (digital-saas screen)
 Best screen 55 (gastro-premises-takeover-broker-prague, E-037 Franchiseportal) deep-dived, final 52.5 Pass. Useful: Lupa (PPWR), Seznam Zpravy (PV sharing), expats.cz commercial listings (odstupne figures), zakonyprolidi.cz (39/2020). Search-only run, NEN not reachable. A/B/C backlog exhausted: a /harvest is overdue.
+
+## 2026-11-24 (local-physical screen)
+Best screen 48 (str-linen-partner-laundry-subscription-prague). Useful: Generali Česká and Kooperativa PDR price lists (real per-dent anchors), datart.cz/dopravart (carry-up price anchor), auto.cz DIY workshop article, ADAC rental-workshop prices, hostwash.cz blog (vendor prices). Not useful: nen.nipez.cz via search (site: filter returns nothing), firmy.cz (no prices for tanker/laundry firms). Search-only run.
