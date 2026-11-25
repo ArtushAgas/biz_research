@@ -74,3 +74,6 @@ Best screen 45 (multilingual-bozp-induction-foreign-workers-cz) below gate 55; d
 
 ## 2026-11-24 (local-physical screen, no deep dive)
 Best screen 48 (str-linen-partner-laundry-subscription-prague) below gate 55; deep dive done 2026-11-21 so weekly rule not due. 4 of 5 candidates fresh-sourced (backlog A/B/C exhausted, only weak A-007/A-032/A-033/C-025 new): /harvest overdue. NEN not readable via search in cloud; public-contract marked not verified. Scout ~129k tokens; screeners 22.9k + 24.0k + 24.8k + 23.5k + 28.4k.
+
+## 2026-11-25 (trade-regulated screen, no deep dive)
+Best screen 46 (adr-safety-adviser-retainer-small-hauliers-cz) below gate 55; deep dive done 2026-11-21 so weekly rule not due. Backlog A/B/C exhausted again: /harvest overdue. NEN not verified in cloud run.
