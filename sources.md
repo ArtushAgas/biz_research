@@ -120,3 +120,6 @@ Best screen 55 (gastro-premises-takeover-broker-prague, E-037 Franchiseportal) d
 
 ## 2026-11-24 (local-physical screen)
 Best screen 48 (str-linen-partner-laundry-subscription-prague). Useful: Generali Česká and Kooperativa PDR price lists (real per-dent anchors), datart.cz/dopravart (carry-up price anchor), auto.cz DIY workshop article, ADAC rental-workshop prices, hostwash.cz blog (vendor prices). Not useful: nen.nipez.cz via search (site: filter returns nothing), firmy.cz (no prices for tanker/laundry firms). Search-only run.
+
+## 2026-11-27 (b2b-services screen)
+Best screen 58 (cz-industrial-exporters-german-leadgen-cz, deep-dived, Pass). Backlog lines C-029, C-030, D-031, C-002 (export pressure, German OEM sourcing) gave the winner; C-041/C-021/C-033/A-037/B-009 (cleaning KPI) 52; C-032/C-036/C-042 (NEN small calls) 46; C-027/D-012/C-006 (haulier) 41; C-005/B-016 (craftsman shortage) 31. Useful new sources: drweb.de agency price comparison (real DACH retainer anchors), sellwerk.de (published agency prices), apiagentura.gov.cz Marketing III PDF (primary grant terms). Weak: ostend.digital (US benchmarks presented as German; CPL claim did not match), NEN site-filtered web search returns nothing (needs browser). Groups A/B/C lines of strength 3+ are nearly all used: a /harvest is advisable.
